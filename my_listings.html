@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+{% block title %}My Listings{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="{{ url_for('index') }}">Home</a>
+      <i class="fas fa-chevron-right" style="font-size:0.65rem;"></i>
+      <span>My Listings</span>
+    </div>
+    <h1>My Listings</h1>
+    <p>Manage your campus marketplace listings.</p>
+  </div>
+</div>
+
+<section class="section-sm">
+  <div class="container">
+
+    <!-- Stats -->
+    <div class="grid-4" style="margin-bottom:2rem;">
+      <div class="stat-card">
+        <div class="stat-icon olive"><i class="fas fa-boxes"></i></div>
+        <div class="stat-info">
+          <strong>{{ stats.total }}</strong>
+          <span>Total Listings</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon olive"><i class="fas fa-check-circle"></i></div>
+        <div class="stat-info">
+          <strong>{{ stats.active }}</strong>
+          <span>Active Listings</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon terra"><i class="fas fa-handshake"></i></div>
+        <div class="stat-info">
+          <strong>{{ stats.claimed }}</strong>
+          <span>Items Claimed</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon gray"><i class="fas fa-chart-line"></i></div>
+        <div class="stat-info">
+          <strong>{{ stats.avg_prob }}%</strong>
+          <span>Avg. Claim Prob.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Listings -->
+    <div class="card" style="padding:1.75rem;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem;">
+        <h2 style="font-size:1.1rem;font-weight:700;">Your Items ({{ listings|length }})</h2>
+        <a href="{{ url_for('list_item') }}" class="btn btn-primary btn-md">
+          <i class="fas fa-plus"></i> New Listing
+        </a>
+      </div>
+
+      {% if listings %}
+      <div id="listingsContainer">
+        {% for item in listings %}
+        {% set icons = {'Books':'📚','Calculators':'🔢','Lab Equipment':'🔬','Electronics':'💻','Stationery':'✏️','Bags':'🎒','Project Materials':'🔧','Other':'📦'} %}
+        {% set prob = 87 if item.claim_speed == 'Within 1 Day' else (62 if item.claim_speed == 'Within 1 Week' else 28) %}
+        {% set prob_class = 'high' if item.claim_speed == 'Within 1 Day' else ('medium' if item.claim_speed == 'Within 1 Week' else 'low') %}
+        <div class="listing-row" id="listing-row-{{ item.id }}">
+          <div style="width:44px;height:44px;background:var(--cream);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;">
+            {{ icons.get(item.category, '📦') }}
+          </div>
+          <div class="listing-row-info">
+            <div class="listing-row-name">{{ item.item_name }}</div>
+            <div class="listing-row-meta">
+              ₹{{ item.price }} · {{ item.condition }} · {{ item.department }} · Sem {{ item.semester }}
+            </div>
+          </div>
+          <span class="badge badge-{{ 'high' if item.demand_level == 'High' else ('medium' if item.demand_level == 'Medium' else 'low') }}">
+            {{ item.demand_level }}
+          </span>
+          <span class="prob-chip {{ prob_class }}">{{ prob }}% · {{ item.claim_speed }}</span>
+          <span class="badge badge-{{ 'active' if item.status == 'active' else 'claimed' }}">
+            {{ item.status|title }}
+          </span>
+          <div class="listing-row-actions">
+            <a href="{{ url_for('item_details', item_id=item.id) }}" class="btn btn-ghost btn-icon btn-sm" title="View">
+              <i class="fas fa-eye"></i>
+            </a>
+            <button onclick="openEditModal('{{ item.id }}','{{ item.item_name }}','{{ item.price }}','{{ item.condition }}','{{ item.description|replace("'","&apos;") }}')" class="btn btn-outline btn-icon btn-sm" title="Edit">
+              <i class="fas fa-edit"></i>
+            </button>
+            {% if item.status == 'active' %}
+            <button onclick="markClaimed('{{ item.id }}', document.getElementById('listing-row-{{ item.id }}'))" class="btn btn-ghost btn-sm" title="Mark as Claimed" style="font-size:0.78rem;">
+              <i class="fas fa-check"></i> Claimed
+            </button>
+            {% endif %}
+            <button onclick="deleteListing('{{ item.id }}', document.getElementById('listing-row-{{ item.id }}'))" class="btn btn-danger btn-icon btn-sm" title="Delete">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="empty-state">
+        <div class="empty-icon"><i class="fas fa-box-open"></i></div>
+        <h3>No listings yet</h3>
+        <p>Start listing your unused items and let the campus community find them!</p>
+        <a href="{{ url_for('list_item') }}" class="btn btn-primary btn-md" style="margin-top:1rem;">
+          <i class="fas fa-plus"></i> List Your First Item
+        </a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<!-- Edit Modal -->
+<div class="modal-overlay" id="editModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3><i class="fas fa-edit" style="color:var(--olive);margin-right:0.5rem;"></i> Edit Listing</h3>
+      <button class="modal-close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <input type="hidden" id="editItemId" />
+      <div class="form-group" style="margin-bottom:1rem;">
+        <label class="form-label">Item Name</label>
+        <input type="text" class="form-control" id="editItemName" />
+      </div>
+      <div class="form-group" style="margin-bottom:1rem;">
+        <label class="form-label">Price (₹)</label>
+        <input type="number" class="form-control" id="editPrice" min="1" />
+      </div>
+      <div class="form-group" style="margin-bottom:1rem;">
+        <label class="form-label">Condition</label>
+        <select class="form-control" id="editCondition">
+          <option value="Like New">Like New</option>
+          <option value="Good">Good</option>
+          <option value="Fair">Fair</option>
+          <option value="Poor">Poor</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Description</label>
+        <textarea class="form-control" id="editDesc" rows="3"></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button onclick="closeModal('editModal')" class="btn btn-ghost btn-md">Cancel</button>
+      <button onclick="saveEdit()" class="btn btn-primary btn-md">
+        <i class="fas fa-save"></i> Save Changes
+      </button>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function openEditModal(id, name, price, condition, desc) {
+  document.getElementById('editItemId').value = id;
+  document.getElementById('editItemName').value = name;
+  document.getElementById('editPrice').value = price;
+  document.getElementById('editCondition').value = condition;
+  document.getElementById('editDesc').value = desc.replace(/&apos;/g, "'");
+  openModal('editModal');
+}
+
+function saveEdit() {
+  const id = document.getElementById('editItemId').value;
+  const data = {
+    item_name: document.getElementById('editItemName').value,
+    price: parseInt(document.getElementById('editPrice').value),
+    condition: document.getElementById('editCondition').value,
+    description: document.getElementById('editDesc').value,
+  };
+  fetch(`/api/listings/update/${id}`, {
+    method: 'PUT', headers: {'Content-Type':'application/json'},
+    body: JSON.stringify(data)
+  })
+  .then(r => r.json())
+  .then(res => {
+    if (res.success) {
+      closeModal('editModal');
+      showToast('Listing updated successfully!', 'success');
+      setTimeout(() => location.reload(), 1000);
+    }
+  })
+  .catch(() => showToast('Failed to update listing', 'error'));
+}
+</script>
+{% endblock %}

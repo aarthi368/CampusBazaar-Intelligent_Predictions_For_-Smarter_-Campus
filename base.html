@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{% block meta_desc %}CampusBazar — The intelligent student marketplace with ML-based claim prediction. Buy, sell, and exchange items within your campus community.{% endblock %}" />
+  <title>{% block title %}CampusBazar{% endblock %} | Student Marketplace</title>
+
+  <!-- Preconnect fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+
+  {% block extra_css %}{% endblock %}
+</head>
+<body class="page-wrapper">
+
+  <!-- ── NAVBAR ─────────────────────────────────────── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <!-- Logo -->
+      <a href="{{ url_for('index') }}" class="nav-logo" aria-label="CampusBazar Home">
+        <div class="logo-icon"><i class="fas fa-store-alt"></i></div>
+        Campus<span class="accent">Bazar</span>
+      </a>
+
+      <!-- Desktop nav links -->
+      <div class="nav-links">
+        <a href="{{ url_for('index') }}"><i class="fas fa-home" aria-hidden="true"></i> Home</a>
+        <a href="{{ url_for('marketplace') }}"><i class="fas fa-shop" aria-hidden="true"></i> Marketplace</a>
+        <a href="{{ url_for('list_item') }}"><i class="fas fa-plus-circle" aria-hidden="true"></i> List an Item</a>
+        <a href="{{ url_for('my_listings') }}"><i class="fas fa-boxes" aria-hidden="true"></i> My Listings</a>
+        <a href="{{ url_for('wishlist_page') }}"><i class="fas fa-heart" aria-hidden="true"></i> Wishlist</a>
+        <a href="{{ url_for('dashboard') }}"><i class="fas fa-chart-pie" aria-hidden="true"></i> Dashboard</a>
+        <a href="{{ url_for('about') }}"><i class="fas fa-info-circle" aria-hidden="true"></i> About</a>
+      </div>
+
+      <!-- Right side -->
+      <div class="nav-right">
+        <a href="{{ url_for('marketplace') }}" class="nav-icon-btn" title="Search">
+          <i class="fas fa-search"></i>
+        </a>
+        <a href="{{ url_for('wishlist_page') }}" class="nav-icon-btn" title="Wishlist" style="position:relative;">
+          <i class="fas fa-heart"></i>
+          <span class="nav-badge" id="wishlistNavBadge" style="display:none;"></span>
+        </a>
+        <a href="{{ url_for('dashboard') }}" class="nav-icon-btn" title="Dashboard">
+          <i class="fas fa-user"></i>
+        </a>
+        <a href="{{ url_for('list_item') }}" class="btn-cta-nav">+ List Your Item</a>
+      </div>
+
+      <!-- Hamburger -->
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── MOBILE NAVIGATION ──────────────────────────── -->
+  <div class="mobile-nav" role="dialog" aria-label="Mobile navigation">
+    <div class="mobile-nav-overlay"></div>
+    <div class="mobile-nav-drawer">
+      <div class="mobile-nav-header">
+        <div class="nav-logo" style="font-size:1.1rem;">
+          <div class="logo-icon" style="width:30px;height:30px;font-size:0.9rem;"><i class="fas fa-store-alt"></i></div>
+          Campus<span class="accent">Bazar</span>
+        </div>
+        <button class="mobile-nav-close" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <nav class="mobile-nav-links">
+        <a href="{{ url_for('index') }}"><i class="fas fa-home"></i> Home</a>
+        <a href="{{ url_for('marketplace') }}"><i class="fas fa-shop"></i> Marketplace</a>
+        <a href="{{ url_for('list_item') }}"><i class="fas fa-plus-circle"></i> List an Item</a>
+        <a href="{{ url_for('my_listings') }}"><i class="fas fa-boxes"></i> My Listings</a>
+        <a href="{{ url_for('wishlist_page') }}"><i class="fas fa-heart"></i> Wishlist</a>
+        <a href="{{ url_for('dashboard') }}"><i class="fas fa-chart-pie"></i> Dashboard</a>
+        <a href="{{ url_for('ml_insights') }}"><i class="fas fa-robot"></i> ML Insights</a>
+        <a href="{{ url_for('about') }}"><i class="fas fa-info-circle"></i> About</a>
+      </nav>
+
+      <div class="mobile-nav-cta">
+        <a href="{{ url_for('list_item') }}" class="btn btn-primary btn-lg">
+          <i class="fas fa-plus"></i> List Your Item
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── MAIN CONTENT ───────────────────────────────── -->
+  <main class="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo-icon" style="width:30px;height:30px;border-radius:6px;background:var(--olive);display:flex;align-items:center;justify-content:center;color:white;font-size:0.85rem;">
+              <i class="fas fa-store-alt"></i>
+            </div>
+            Campus<span class="accent">Bazar</span>
+          </div>
+          <p>The intelligent student marketplace. Buy, sell, and exchange campus items with ML-powered predictions.</p>
+        </div>
+        <div>
+          <div class="footer-heading">Marketplace</div>
+          <div class="footer-links">
+            <a href="{{ url_for('marketplace') }}">Browse All Items</a>
+            <a href="{{ url_for('list_item') }}">Sell an Item</a>
+            <a href="{{ url_for('wishlist_page') }}">My Wishlist</a>
+            <a href="{{ url_for('my_listings') }}">My Listings</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Platform</div>
+          <div class="footer-links">
+            <a href="{{ url_for('dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('ml_insights') }}">ML Insights</a>
+            <a href="{{ url_for('prediction') }}">Get Prediction</a>
+            <a href="{{ url_for('about') }}">About Us</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading">Categories</div>
+          <div class="footer-links">
+            <a href="{{ url_for('marketplace') }}?category=Books">Books</a>
+            <a href="{{ url_for('marketplace') }}?category=Electronics">Electronics</a>
+            <a href="{{ url_for('marketplace') }}?category=Lab+Equipment">Lab Equipment</a>
+            <a href="{{ url_for('marketplace') }}?category=Calculators">Calculators</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 CampusBazar. Built for campus communities 🌱</span>
+        <span>Made with <i class="fas fa-heart" style="color:var(--terracotta);"></i> for students</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── TOAST CONTAINER ───────────────────────────── -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- ── SCRIPTS ────────────────────────────────────── -->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  {% block extra_js %}{% endblock %}
+
+</body>
+</html>

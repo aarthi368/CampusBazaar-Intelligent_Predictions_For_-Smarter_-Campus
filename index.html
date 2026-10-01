@@ -1,0 +1,371 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+
+      <!-- Left: Copy -->
+      <div class="hero-content">
+        <div class="hero-tag">
+          <i class="fas fa-leaf"></i> Campus-First Marketplace
+        </div>
+        <h1 class="hero-headline">
+          Give Your Unused Items<br>
+          <em>a Second Life.</em>
+        </h1>
+        <p class="hero-sub">
+          Buy, sell, and exchange useful items within your campus community — with
+          intelligent ML predictions that help you list smarter and faster.
+        </p>
+        <div class="hero-actions">
+          <a href="{{ url_for('marketplace') }}" class="btn btn-primary btn-xl">
+            <i class="fas fa-shop"></i> Explore Marketplace
+          </a>
+          <a href="{{ url_for('list_item') }}" class="btn btn-outline btn-xl">
+            <i class="fas fa-plus"></i> List Your Item
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <strong data-counter="{{ stats.total_listings }}">0</strong>
+            <span>Items Listed</span>
+          </div>
+          <div class="hero-stat">
+            <strong data-counter="{{ stats.exchanges + 320 }}">0</strong>
+            <span>Exchanges</span>
+          </div>
+          <div class="hero-stat">
+            <strong data-counter="{{ stats.students }}">0</strong>
+            <span>Students</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Visual card -->
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div>
+              <div class="hero-card-icon">📚</div>
+            </div>
+            <div style="text-align:right;">
+              <div class="hero-card-name">Data Structures Book</div>
+              <div class="hero-card-cat">CSE · Semester 3</div>
+            </div>
+          </div>
+          <div class="hero-card-row">
+            <div>
+              <div class="hero-card-price">₹350</div>
+              <div style="font-size:0.78rem;color:var(--warm-gray);margin-top:0.2rem;">Good Condition</div>
+              <div style="margin-top:0.5rem;"><span class="badge badge-high"><i class="fas fa-fire-flame-curved"></i> High Demand</span></div>
+            </div>
+            <div class="prob-circle">
+              <svg width="80" height="80" viewBox="0 0 120 120" data-prob-ring="87">
+                <circle cx="60" cy="60" r="54" fill="none" stroke="#E7E1D8" stroke-width="10"/>
+                <circle class="ring-progress" cx="60" cy="60" r="54" fill="none"
+                  stroke="#556B2F" stroke-width="10" stroke-linecap="round"
+                  stroke-dasharray="339.3" stroke-dashoffset="339.3"/>
+              </svg>
+              <div style="position:absolute;text-align:center;z-index:1;">
+                <div class="prob-circle-text">87%</div>
+                <div class="prob-circle-label">Claim Prob.</div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-card-claim">
+            <i class="fas fa-bolt"></i> Likely within 1 Day
+          </div>
+        </div>
+
+        <div class="hero-mini-card">
+          <div class="mini-icon"><i class="fas fa-calculator" style="color:var(--olive);"></i></div>
+          <div>
+            <strong>Scientific Calculator</strong>
+            <span>₹650 · ECE · 78% Claim Prob.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ HOW IT WORKS ══════════════════ -->
+<section class="section" style="background:var(--white);">
+  <div class="container">
+    <div class="section-header text-center">
+      <div class="section-tag"><i class="fas fa-route"></i> How It Works</div>
+      <h2>From Unused to Useful in 4 Steps</h2>
+      <p>The simplest way to trade within your campus community.</p>
+    </div>
+
+    <div class="grid-4" style="margin-top:2.5rem;">
+      <div class="how-card" style="margin-top:14px;">
+        <div class="how-step-num">1</div>
+        <div class="how-icon"><i class="fas fa-search"></i></div>
+        <h3>Discover</h3>
+        <p>Browse items listed by students across departments and semesters on campus.</p>
+      </div>
+      <div class="how-card" style="margin-top:14px;">
+        <div class="how-step-num">2</div>
+        <div class="how-icon"><i class="fas fa-tags"></i></div>
+        <h3>List</h3>
+        <p>Upload your unused item in minutes with our simple multi-step listing form.</p>
+      </div>
+      <div class="how-card" style="margin-top:14px;">
+        <div class="how-step-num">3</div>
+        <div class="how-icon"><i class="fas fa-robot"></i></div>
+        <h3>Predict</h3>
+        <p>Our ML model analyzes demand, price, condition & more to predict claim speed.</p>
+      </div>
+      <div class="how-card" style="margin-top:14px;">
+        <div class="how-step-num">4</div>
+        <div class="how-icon"><i class="fas fa-handshake"></i></div>
+        <h3>Connect</h3>
+        <p>Contact the seller or buyer through the platform and complete your exchange.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ SMART PREDICTIONS ══════════════════ -->
+<section class="section" style="background:var(--cream);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;">
+
+      <!-- Left -->
+      <div>
+        <div class="section-tag"><i class="fas fa-brain"></i> ML-Powered</div>
+        <h2 style="font-size:1.85rem;margin-bottom:1rem;">
+          Smart Predictions<br>Before You Wait
+        </h2>
+        <p style="color:var(--warm-gray);line-height:1.7;margin-bottom:1.5rem;">
+          Our machine learning model analyzes 7 key features — category, price, condition,
+          department, semester, posting day, and demand — to predict exactly how quickly
+          your item is likely to be claimed.
+        </p>
+        <div style="display:flex;flex-direction:column;gap:0.85rem;margin-bottom:2rem;">
+          <div style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;">
+            <div style="width:32px;height:32px;background:rgba(85,107,47,0.1);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--olive);flex-shrink:0;">
+              <i class="fas fa-clock"></i>
+            </div>
+            <span><strong>Claim Speed</strong> — Within 1 day, week, or low probability</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;">
+            <div style="width:32px;height:32px;background:rgba(85,107,47,0.1);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--olive);flex-shrink:0;">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <span><strong>Demand Level</strong> — Based on category & campus activity</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:0.75rem;font-size:0.9rem;">
+            <div style="width:32px;height:32px;background:rgba(85,107,47,0.1);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--olive);flex-shrink:0;">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <span><strong>Listing Suggestions</strong> — Tips to improve visibility</span>
+          </div>
+        </div>
+        <a href="{{ url_for('list_item') }}" class="btn btn-primary btn-lg">
+          <i class="fas fa-magic"></i> Get Your Prediction
+        </a>
+      </div>
+
+      <!-- Right: prediction showcase card -->
+      <div class="prediction-showcase">
+        <div style="text-align:center;margin-bottom:1.25rem;">
+          <div class="prediction-prob-ring">
+            <svg width="130" height="130" viewBox="0 0 120 120" data-prob-ring="87">
+              <circle cx="60" cy="60" r="54" fill="none" stroke="#E7E1D8" stroke-width="10"/>
+              <circle class="ring-progress" cx="60" cy="60" r="54" fill="none"
+                stroke="#556B2F" stroke-width="10" stroke-linecap="round"
+                stroke-dasharray="339.3" stroke-dashoffset="339.3"/>
+            </svg>
+            <div class="prediction-prob-inner">
+              <div class="pct">87%</div>
+              <div class="label">Claim Probability</div>
+            </div>
+          </div>
+          <div style="font-size:0.85rem;color:var(--terracotta);font-weight:700;margin-top:0.5rem;">
+            <i class="fas fa-bolt"></i> Likely within 1 Day
+          </div>
+        </div>
+
+        <div class="prediction-cards">
+          <div class="pred-mini">
+            <div class="val">HIGH</div>
+            <div class="lbl">Demand</div>
+          </div>
+          <div class="pred-mini">
+            <div class="val">92%</div>
+            <div class="lbl">Confidence</div>
+          </div>
+          <div class="pred-mini">
+            <div class="val">1–2d</div>
+            <div class="lbl">Est. Time</div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="pred-factors">
+          <div class="pred-factor">
+            <i class="fas fa-check-circle pos"></i>
+            <span>Affordable competitive price</span>
+          </div>
+          <div class="pred-factor">
+            <i class="fas fa-check-circle pos"></i>
+            <span>High-demand category on campus</span>
+          </div>
+          <div class="pred-factor">
+            <i class="fas fa-check-circle pos"></i>
+            <span>Good condition boosts buyer trust</span>
+          </div>
+          <div class="pred-factor">
+            <i class="fas fa-check-circle pos"></i>
+            <span>Relevant to current semester</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ FEATURED LISTINGS ══════════════════ -->
+<section class="section" style="background:var(--white);">
+  <div class="container">
+    <div class="section-header flex-between" style="flex-wrap:wrap;gap:1rem;">
+      <div>
+        <div class="section-tag"><i class="fas fa-star"></i> Featured Items</div>
+        <h2>Popular on Campus Right Now</h2>
+      </div>
+      <a href="{{ url_for('marketplace') }}" class="btn btn-outline btn-md">
+        View All <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="grid-items">
+      {% set icons = {'Books':'📚','Calculators':'🔢','Lab Equipment':'🔬','Electronics':'💻','Stationery':'✏️','Bags':'🎒','Project Materials':'🔧','Other':'📦'} %}
+      {% for item in featured %}
+      {% set claim_class = 'high' if item.claim_speed == 'Within 1 Day' else ('medium' if item.claim_speed == 'Within 1 Week' else 'low') %}
+      {% set prob = 87 if item.claim_speed == 'Within 1 Day' else (62 if item.claim_speed == 'Within 1 Week' else 28) %}
+      <div class="item-card">
+        <div class="item-card-image">
+          <div class="no-image">
+            <span style="font-size:2.5rem;">{{ icons.get(item.category, '📦') }}</span>
+            <span>{{ item.category }}</span>
+          </div>
+          <div class="item-card-badge">
+            <span class="badge badge-{{ 'high' if item.demand_level == 'High' else ('medium' if item.demand_level == 'Medium' else 'low') }}">
+              {% if item.demand_level == 'High' %}<i class="fas fa-fire-flame-curved"></i>{% endif %}
+              {{ item.demand_level }} Demand
+            </span>
+          </div>
+          <button class="wish-btn" onclick="toggleWishlist('{{ item.id }}', this)" title="Add to wishlist">
+            <i class="far fa-heart"></i>
+          </button>
+        </div>
+        <div class="item-card-body">
+          <div class="item-card-name">{{ item.item_name }}</div>
+          <div class="item-card-price">₹{{ item.price }}</div>
+          <div class="item-card-meta">
+            <span><i class="fas fa-tag"></i> {{ item.condition }}</span>
+            <span><i class="fas fa-graduation-cap"></i> {{ item.department }}</span>
+            <span><i class="fas fa-layer-group"></i> Sem {{ item.semester }}</span>
+          </div>
+          <div class="claim-bar">
+            <div class="claim-bar-label">
+              <span class="prob">{{ prob }}% Claim Prob.</span>
+              <span class="speed">{{ item.claim_speed }}</span>
+            </div>
+            <div class="claim-bar-track">
+              <div class="claim-bar-fill {{ claim_class }}" style="width:{{ prob }}%;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="item-card-footer">
+          <a href="{{ url_for('item_details', item_id=item.id) }}" class="btn btn-primary btn-sm">
+            View Details
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ CAMPUS IMPACT ══════════════════ -->
+<section class="impact-section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2.5rem;">
+      <div class="section-tag" style="color:var(--cream);background:rgba(250,247,240,0.1);">
+        <i class="fas fa-users"></i> Campus Impact
+      </div>
+      <h2 style="color:var(--cream);font-size:1.85rem;">Real Numbers, Real Community</h2>
+    </div>
+    <div class="impact-grid">
+      <div class="impact-item">
+        <div class="impact-num"><span data-counter="{{ stats.total_listings + 500 }}">0</span><span>+</span></div>
+        <div class="impact-label">Items Listed</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-num"><span data-counter="{{ stats.exchanges + 320 }}">0</span><span>+</span></div>
+        <div class="impact-label">Successful Exchanges</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-num"><span data-counter="78">0</span><span>%</span></div>
+        <div class="impact-label">Average Claim Rate</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-num"><span data-counter="{{ stats.students + 1200 }}">0</span><span>+</span></div>
+        <div class="impact-label">Students Reached</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ CTA BANNER ══════════════════ -->
+<section class="section" style="background:var(--cream);">
+  <div class="container">
+    <div style="background:var(--white);border:1px solid var(--beige);border-radius:var(--radius-xl);padding:3rem;text-align:center;box-shadow:var(--shadow-md);">
+      <div class="section-tag"><i class="fas fa-recycle"></i> Sustainability</div>
+      <h2 style="font-size:1.75rem;margin-bottom:0.75rem;">Ready to Declutter Your Room?</h2>
+      <p style="color:var(--warm-gray);max-width:520px;margin:0 auto 2rem;line-height:1.7;">
+        List your unused items today and let our ML model predict how fast they'll find a new home.
+        One listing. Instant prediction. Real impact.
+      </p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="{{ url_for('list_item') }}" class="btn btn-primary btn-xl">
+          <i class="fas fa-plus"></i> List Your Item
+        </a>
+        <a href="{{ url_for('ml_insights') }}" class="btn btn-ghost btn-xl">
+          <i class="fas fa-robot"></i> Learn How ML Works
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Animate rings after page load
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('[data-prob-ring]').forEach(svg => {
+    const pct = parseInt(svg.getAttribute('data-prob-ring'));
+    const circumference = 2 * Math.PI * 54;
+    const circle = svg.querySelector('.ring-progress');
+    if (!circle) return;
+    const offset = circumference - (pct / 100) * circumference;
+    setTimeout(() => {
+      circle.style.transition = 'stroke-dashoffset 1.2s ease-out';
+      circle.setAttribute('stroke-dashoffset', offset);
+    }, 400);
+  });
+});
+</script>
+{% endblock %}

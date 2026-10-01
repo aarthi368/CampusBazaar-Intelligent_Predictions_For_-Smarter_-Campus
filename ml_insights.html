@@ -1,0 +1,281 @@
+{% extends "base.html" %}
+{% block title %}ML Insights{% endblock %}
+{% block meta_desc %}Explore the machine learning component of CampusBazar — model comparison, feature importance, and workflow.{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="{{ url_for('index') }}">Home</a>
+      <i class="fas fa-chevron-right" style="font-size:0.65rem;"></i>
+      <span>ML Insights</span>
+    </div>
+    <h1><i class="fas fa-robot" style="color:var(--terracotta);"></i> ML Insights</h1>
+    <p>How our machine learning model predicts claim speed for campus marketplace listings.</p>
+  </div>
+</div>
+
+<section class="section-sm">
+  <div class="container">
+
+    <!-- Overview banner -->
+    <div class="card" style="padding:2rem;margin-bottom:2rem;background:var(--charcoal);border-color:transparent;">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1.5rem;text-align:center;">
+        <div>
+          <div style="font-family:var(--font-head);font-size:2rem;font-weight:800;color:var(--cream);">{{ ml_metrics.dataset_size }}</div>
+          <div style="font-size:0.82rem;color:var(--warm-gray);">Training Samples</div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-head);font-size:2rem;font-weight:800;color:var(--cream);">{{ ml_metrics.models|length }}</div>
+          <div style="font-size:0.82rem;color:var(--warm-gray);">Models Trained</div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-head);font-size:2rem;font-weight:800;color:var(--cream);">7</div>
+          <div style="font-size:0.82rem;color:var(--warm-gray);">Input Features</div>
+        </div>
+        <div>
+          <div style="font-family:var(--font-head);font-size:2rem;font-weight:800;color:var(--cream);">3</div>
+          <div style="font-size:0.82rem;color:var(--warm-gray);">Prediction Classes</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:280px 1fr;gap:2rem;align-items:start;margin-bottom:2rem;">
+
+      <!-- ML Workflow -->
+      <div class="card" style="padding:1.75rem;">
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:1.5rem;">
+          <i class="fas fa-sitemap" style="color:var(--olive);"></i> ML Workflow
+        </h3>
+        <div class="ml-workflow">
+          {% set steps = [
+            ('fa-database', 'Dataset (600 records)'),
+            ('fa-broom', 'Data Cleaning'),
+            ('fa-cogs', 'Feature Encoding'),
+            ('fa-scissors', 'Train/Test Split (80/20)'),
+            ('fa-graduation-cap', 'Model Training'),
+            ('fa-balance-scale', 'Model Comparison'),
+            ('fa-trophy', 'Best Model Selected'),
+            ('fa-bolt', 'Claim Prediction')
+          ] %}
+          {% for icon, label in steps %}
+          <div class="ml-step">
+            <div class="ml-step-icon"><i class="fas {{ icon }}"></i></div>
+            <span>{{ label }}</span>
+          </div>
+          {% if not loop.last %}<div class="ml-arrow"></div>{% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Model Comparison -->
+      <div class="card" style="padding:1.75rem;">
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.5rem;">
+          <i class="fas fa-table" style="color:var(--olive);"></i> Model Comparison
+        </h3>
+        <p style="font-size:0.82rem;color:var(--warm-gray);margin-bottom:1.25rem;">
+          Trained on {{ ml_metrics.train_size }} samples, evaluated on {{ ml_metrics.test_size }} samples.
+        </p>
+
+        <div style="overflow-x:auto;">
+          <table class="model-table">
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Accuracy</th>
+                <th>Precision</th>
+                <th>Recall</th>
+                <th>F1 Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for model_name, metrics in ml_metrics.models.items() %}
+              <tr class="{{ 'best-row' if model_name == ml_metrics.best_model else '' }}">
+                <td>
+                  {{ model_name }}
+                  {% if model_name == ml_metrics.best_model %}
+                  <span class="badge badge-new" style="font-size:0.65rem;margin-left:0.4rem;">Best</span>
+                  {% endif %}
+                </td>
+                <td><span class="metric-pill {{ 'best' if model_name == ml_metrics.best_model else '' }}">{{ (metrics.accuracy * 100)|round(1) }}%</span></td>
+                <td><span class="metric-pill {{ 'best' if model_name == ml_metrics.best_model else '' }}">{{ (metrics.precision * 100)|round(1) }}%</span></td>
+                <td><span class="metric-pill {{ 'best' if model_name == ml_metrics.best_model else '' }}">{{ (metrics.recall * 100)|round(1) }}%</span></td>
+                <td><span class="metric-pill {{ 'best' if model_name == ml_metrics.best_model else '' }}">{{ (metrics.f1_score * 100)|round(1) }}%</span></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <div style="background:rgba(85,107,47,0.06);border:1px solid var(--beige);border-radius:var(--radius-md);padding:1rem;margin-top:1.25rem;">
+          <div style="font-weight:700;font-size:0.9rem;margin-bottom:0.5rem;color:var(--dark-olive);">
+            <i class="fas fa-trophy"></i> Best Model: {{ ml_metrics.best_model }}
+          </div>
+          <div style="font-size:0.82rem;color:var(--warm-gray);line-height:1.6;">
+            {% if ml_metrics.best_model == 'Random Forest' %}
+            <strong>Random Forest</strong> was selected as the best model due to its superior F1 score of <strong>{{ (ml_metrics.best_f1 * 100)|round(1) }}%</strong>.
+            It uses ensemble learning (combining 100 decision trees), which reduces overfitting and handles the categorical features in our campus dataset effectively.
+            It also supports feature importance analysis, making predictions more explainable.
+            {% elif ml_metrics.best_model == 'Decision Tree' %}
+            <strong>Decision Tree</strong> was selected with an F1 score of <strong>{{ (ml_metrics.best_f1 * 100)|round(1) }}%</strong>.
+            It provides clear decision rules and handles both categorical and numerical features naturally.
+            {% else %}
+            <strong>{{ ml_metrics.best_model }}</strong> was selected with the highest F1 score of <strong>{{ (ml_metrics.best_f1 * 100)|round(1) }}%</strong>
+            on the campus marketplace dataset.
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature Importance -->
+    <div class="card" style="padding:1.75rem;margin-bottom:2rem;">
+      <h3 style="font-size:1rem;font-weight:700;margin-bottom:0.5rem;">
+        <i class="fas fa-chart-bar" style="color:var(--olive);"></i> Feature Importance
+      </h3>
+      <p style="font-size:0.82rem;color:var(--warm-gray);margin-bottom:1.5rem;">
+        Contribution of each feature to the {{ ml_metrics.best_model }} prediction model.
+      </p>
+
+      {% if ml_metrics.feature_importance %}
+      {% set sorted_feats = ml_metrics.feature_importance.items()|list|sort(attribute='1', reverse=True) %}
+      {% set max_imp = sorted_feats[0][1] %}
+      {% for feat_name, imp in sorted_feats %}
+      <div class="feature-bar-row">
+        <div class="feature-name">{{ feat_name }}</div>
+        <div class="feature-track">
+          <div class="feature-fill" style="width:{{ ((imp / max_imp) * 100)|round(1) }}%;"></div>
+        </div>
+        <div class="feature-pct">{{ (imp * 100)|round(1) }}%</div>
+      </div>
+      {% endfor %}
+      {% else %}
+      <p style="color:var(--warm-gray);font-size:0.875rem;">Feature importance not available for this model type.</p>
+      {% endif %}
+
+      <div style="margin-top:1rem;padding:1rem;background:var(--cream);border-radius:var(--radius-md);">
+        <canvas id="featureChart" height="80"></canvas>
+      </div>
+    </div>
+
+    <!-- Dataset Info -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem;">
+      <div class="card" style="padding:1.75rem;">
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:1.25rem;">
+          <i class="fas fa-database" style="color:var(--olive);"></i> Dataset Information
+        </h3>
+        <div style="display:flex;flex-direction:column;gap:0.85rem;">
+          {% for label, val in [
+            ('Total Records', ml_metrics.dataset_size),
+            ('Training Set', ml_metrics.train_size ~ ' samples (80%)'),
+            ('Test Set', ml_metrics.test_size ~ ' samples (20%)'),
+            ('Input Features', '7 (Price, Category, Condition, Dept., Sem., Day, Demand)'),
+            ('Target Variable', 'claim_speed (3 classes)'),
+            ('Encoding', 'Label Encoding for categorical features'),
+            ('Scaling', 'StandardScaler for LR & KNN')
+          ] %}
+          <div style="display:flex;justify-content:space-between;font-size:0.85rem;padding-bottom:0.75rem;border-bottom:1px solid var(--beige);">
+            <span style="color:var(--warm-gray);">{{ label }}</span>
+            <span style="font-weight:600;">{{ val }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="card" style="padding:1.75rem;">
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:1.25rem;">
+          <i class="fas fa-layer-group" style="color:var(--terracotta);"></i> Class Distribution
+        </h3>
+        {% set total = ml_metrics.class_distribution.values()|list|sum %}
+        {% for cls, count in ml_metrics.class_distribution.items() %}
+        {% set pct = ((count / total) * 100)|round(1) if total > 0 else 0 %}
+        {% set cls_color = '#556B2F' if cls == 'Within 1 Day' else ('#C76B4A' if cls == 'Within 1 Week' else '#78716C') %}
+        <div style="margin-bottom:1rem;">
+          <div style="display:flex;justify-content:space-between;font-size:0.82rem;margin-bottom:0.3rem;">
+            <span style="font-weight:600;">{{ cls }}</span>
+            <span style="color:var(--warm-gray);">{{ count }} samples ({{ pct }}%)</span>
+          </div>
+          <div style="height:8px;background:var(--beige);border-radius:999px;overflow:hidden;">
+            <div style="height:100%;width:{{ pct }}%;background:{{ cls_color }};border-radius:inherit;transition:width 0.8s ease;"></div>
+          </div>
+        </div>
+        {% endfor %}
+
+        <div style="margin-top:1.5rem;padding:1rem;background:var(--cream);border-radius:var(--radius-md);">
+          <div style="font-size:0.82rem;font-weight:700;margin-bottom:0.5rem;color:var(--charcoal);">Prediction Classes:</div>
+          <div style="display:flex;flex-direction:column;gap:0.4rem;font-size:0.8rem;color:var(--warm-gray);">
+            <div><span style="color:var(--dark-olive);font-weight:600;">Within 1 Day</span> — High claim probability (≥75%)</div>
+            <div><span style="color:var(--dark-terra);font-weight:600;">Within 1 Week</span> — Medium probability (40–74%)</div>
+            <div><span style="color:var(--warm-gray);font-weight:600;">Low Probability</span> — Low probability (&lt;40%)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Prediction Pipeline -->
+    <div class="card" style="padding:1.75rem;">
+      <h3 style="font-size:1rem;font-weight:700;margin-bottom:1.25rem;">
+        <i class="fas fa-cogs" style="color:var(--olive);"></i> Prediction Pipeline
+      </h3>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0.75rem;">
+        {% for step, desc, icon in [
+          ('User Input', '7 listing features submitted', 'fa-keyboard'),
+          ('Preprocessing', 'Label encode categorical values', 'fa-cogs'),
+          ('ML Model', '{{ ml_metrics.best_model }} classifier', 'fa-robot'),
+          ('Output', 'Class + probability score', 'fa-chart-pie'),
+          ('Insights', 'Reasons + suggestions', 'fa-lightbulb')
+        ] %}
+        <div style="text-align:center;padding:1.25rem 0.75rem;background:var(--cream);border-radius:var(--radius-md);">
+          <div style="width:44px;height:44px;background:var(--white);border:1px solid var(--beige);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;margin:0 auto 0.75rem;color:var(--olive);font-size:1.1rem;">
+            <i class="fas {{ icon }}"></i>
+          </div>
+          <div style="font-weight:700;font-size:0.82rem;margin-bottom:0.25rem;">{{ step }}</div>
+          <div style="font-size:0.72rem;color:var(--warm-gray);">{{ desc }}</div>
+        </div>
+        {% if not loop.last %}
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+const featureData = {{ ml_metrics.feature_importance | tojson }};
+const featureLabels = Object.keys(featureData);
+const featureValues = Object.values(featureData).map(v => (v * 100).toFixed(1));
+
+new Chart(document.getElementById('featureChart'), {
+  type: 'bar',
+  data: {
+    labels: featureLabels,
+    datasets: [{
+      label: 'Importance %',
+      data: featureValues,
+      backgroundColor: featureLabels.map((_, i) => {
+        const colors = ['#556B2F','#C76B4A','#3F4F23','#7F3928','#8A9E5A','#78716C','#E08B6E'];
+        return colors[i % colors.length];
+      }),
+      borderRadius: 6,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      y: {
+        grid: { color: '#E7E1D8' },
+        ticks: { color: '#78716C', font: { family: 'Inter', size: 11 }, callback: v => v + '%' }
+      },
+      x: { grid: { display: false }, ticks: { color: '#78716C', font: { family: 'Inter', size: 11 } } }
+    }
+  }
+});
+</script>
+{% endblock %}

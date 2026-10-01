@@ -1,0 +1,309 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-header">
+  <div class="container">
+    <div class="breadcrumb" style="margin-bottom:0.75rem;">
+      <a href="{{ url_for('index') }}" style="color:var(--warm-gray);">Home</a>
+      <i class="fas fa-chevron-right" style="font-size:0.65rem;color:var(--warm-gray);"></i>
+      <span style="color:var(--beige);">Dashboard</span>
+    </div>
+    <h1>Student Dashboard</h1>
+    <p>Track your listings, predictions, and campus activity.</p>
+  </div>
+</div>
+
+<section class="section-sm">
+  <div class="container">
+
+    <!-- Stats -->
+    <div class="grid-4" style="margin-bottom:2rem;">
+      <div class="stat-card">
+        <div class="stat-icon olive"><i class="fas fa-boxes"></i></div>
+        <div class="stat-info">
+          <strong data-counter="{{ stats.total_listings }}">0</strong>
+          <span>Total Listings</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon olive"><i class="fas fa-check-circle"></i></div>
+        <div class="stat-info">
+          <strong data-counter="{{ stats.active_listings }}">0</strong>
+          <span>Active Listings</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon terra"><i class="fas fa-handshake"></i></div>
+        <div class="stat-info">
+          <strong data-counter="{{ stats.exchanges }}">0</strong>
+          <span>Exchanges</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon gray"><i class="fas fa-chart-line"></i></div>
+        <div class="stat-info">
+          <strong>{{ stats.avg_claim_prob }}%</strong>
+          <span>Avg. Claim Prob.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Charts row 1 -->
+    <div class="grid-2" style="margin-bottom:1.5rem;">
+      <div class="chart-card">
+        <h3><i class="fas fa-chart-pie" style="color:var(--olive);margin-right:0.5rem;"></i> Listings by Category</h3>
+        <div class="chart-container" style="height:250px;">
+          <canvas id="catChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h3><i class="fas fa-fire-flame-curved" style="color:var(--terracotta);margin-right:0.5rem;"></i> Demand by Category</h3>
+        <div class="chart-container" style="height:250px;">
+          <canvas id="demandChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Charts row 2 -->
+    <div class="grid-3" style="margin-bottom:1.5rem;">
+      <div class="chart-card">
+        <h3><i class="fas fa-bolt" style="color:var(--olive);margin-right:0.5rem;"></i> Claim Speed Distribution</h3>
+        <div class="chart-container" style="height:220px;">
+          <canvas id="claimChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h3><i class="fas fa-chart-bar" style="color:var(--terracotta);margin-right:0.5rem;"></i> Claim Probability</h3>
+        <div class="chart-container" style="height:220px;">
+          <canvas id="probChart"></canvas>
+        </div>
+      </div>
+      <div class="chart-card">
+        <h3><i class="fas fa-trophy" style="color:var(--olive);margin-right:0.5rem;"></i> Successful Exchanges</h3>
+        <div class="chart-container" style="height:220px;">
+          <canvas id="exchangeChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Activity & Recent listings -->
+    <div class="grid-2">
+      <!-- Recent Listings -->
+      <div class="chart-card">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+          <h3 style="margin:0;"><i class="fas fa-list" style="color:var(--olive);margin-right:0.5rem;"></i> Recent Listings</h3>
+          <a href="{{ url_for('my_listings') }}" style="font-size:0.8rem;color:var(--olive);font-weight:600;">View All</a>
+        </div>
+        <div class="activity-feed">
+          {% for item in recent_listings %}
+          {% set icons = {'Books':'📚','Calculators':'🔢','Lab Equipment':'🔬','Electronics':'💻','Stationery':'✏️','Bags':'🎒','Project Materials':'🔧','Other':'📦'} %}
+          <div class="activity-item">
+            <div class="activity-icon olive" style="font-size:1rem;">{{ icons.get(item.category, '📦') }}</div>
+            <div class="activity-text">
+              <strong>{{ item.item_name }}</strong>
+              <div>₹{{ item.price }} · {{ item.condition }} · {{ item.department }}</div>
+              <div class="time">{{ item.posted_date or 'Recently' }}</div>
+            </div>
+            <span class="badge badge-{{ 'active' if item.status == 'active' else 'claimed' }}" style="flex-shrink:0;">
+              {{ item.status|title }}
+            </span>
+          </div>
+          {% endfor %}
+          {% if not recent_listings %}
+          <div class="empty-state" style="padding:2rem;">
+            <p>No listings yet.</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Prediction History + Wishlist -->
+      <div style="display:flex;flex-direction:column;gap:1.5rem;">
+        <!-- Prediction History -->
+        <div class="chart-card">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+            <h3 style="margin:0;"><i class="fas fa-history" style="color:var(--terracotta);margin-right:0.5rem;"></i> Prediction History</h3>
+          </div>
+          <div class="activity-feed">
+            {% if pred_history %}
+            {% for pred in pred_history[:5] %}
+            <div class="activity-item">
+              <div class="activity-icon terra"><i class="fas fa-robot"></i></div>
+              <div class="activity-text">
+                <strong>{{ pred.item_name }}</strong>
+                <div>{{ pred.claim_probability }}% · {{ pred.claim_speed }}</div>
+                <div class="time">{{ pred.timestamp }}</div>
+              </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <div class="empty-state" style="padding:1.5rem;">
+              <p style="font-size:0.85rem;">No predictions yet. <a href="{{ url_for('list_item') }}" style="color:var(--olive);">List an item</a> to get your first prediction.</p>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+
+        <!-- Saved Items -->
+        <div class="chart-card">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+            <h3 style="margin:0;"><i class="fas fa-heart" style="color:var(--terracotta);margin-right:0.5rem;"></i> Saved Items</h3>
+            <a href="{{ url_for('wishlist_page') }}" style="font-size:0.8rem;color:var(--olive);font-weight:600;">View All</a>
+          </div>
+          {% if wishlist_items %}
+          <div class="activity-feed">
+            {% for item in wishlist_items %}
+            <div class="activity-item">
+              <div class="activity-icon terra"><i class="fas fa-heart"></i></div>
+              <div class="activity-text">
+                <strong>{{ item.item_name }}</strong>
+                <div>₹{{ item.price }} · {{ item.claim_speed }}</div>
+              </div>
+              <a href="{{ url_for('item_details', item_id=item.id) }}" class="btn btn-ghost btn-sm" style="flex-shrink:0;font-size:0.75rem;">
+                View
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+          {% else %}
+          <div class="empty-state" style="padding:1.5rem;">
+            <p style="font-size:0.85rem;">No saved items. <a href="{{ url_for('marketplace') }}" style="color:var(--olive);">Browse marketplace</a>.</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+// Parse data from Flask
+const catData = {{ cat_counts | safe }};
+const demandData = {{ demand_counts | safe }};
+const claimData = {{ claim_speed_counts | safe }};
+
+// Color palette
+const OLIVE = '#556B2F';
+const DARK_OLIVE = '#3F4F23';
+const TERRA = '#C76B4A';
+const DARK_TERRA = '#7F3928';
+const WARM_GRAY = '#78716C';
+const CREAM = '#FAF7F0';
+const BEIGE = '#E7E1D8';
+const OLIVE_LIGHT = '#8A9E5A';
+const TERRA_LIGHT = '#E08B6E';
+
+const chartDefaults = {
+  responsive: true, maintainAspectRatio: false,
+  plugins: { legend: { labels: { font: { family: 'Inter', size: 11 }, color: '#78716C' } } }
+};
+
+// 1. Category chart (Doughnut)
+new Chart(document.getElementById('catChart'), {
+  type: 'doughnut',
+  data: {
+    labels: Object.keys(catData),
+    datasets: [{
+      data: Object.values(catData),
+      backgroundColor: [OLIVE, TERRA, DARK_OLIVE, DARK_TERRA, OLIVE_LIGHT, TERRA_LIGHT, WARM_GRAY, '#A08060'],
+      borderWidth: 2, borderColor: '#FAF7F0',
+    }]
+  },
+  options: { ...chartDefaults, cutout: '60%' }
+});
+
+// 2. Demand chart (Bar)
+new Chart(document.getElementById('demandChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Low', 'Medium', 'High'],
+    datasets: [{
+      label: 'Count',
+      data: [demandData['Low'] || 0, demandData['Medium'] || 0, demandData['High'] || 0],
+      backgroundColor: [WARM_GRAY, TERRA, OLIVE],
+      borderRadius: 6,
+    }]
+  },
+  options: {
+    ...chartDefaults,
+    plugins: { legend: { display: false } },
+    scales: {
+      y: { grid: { color: BEIGE }, ticks: { color: WARM_GRAY, font: { family: 'Inter' } } },
+      x: { grid: { display: false }, ticks: { color: WARM_GRAY, font: { family: 'Inter' } } }
+    }
+  }
+});
+
+// 3. Claim Speed (Pie)
+new Chart(document.getElementById('claimChart'), {
+  type: 'pie',
+  data: {
+    labels: ['Within 1 Day', 'Within 1 Week', 'Low Probability'],
+    datasets: [{
+      data: [claimData['Within 1 Day'] || 0, claimData['Within 1 Week'] || 0, claimData['Low Probability'] || 0],
+      backgroundColor: [OLIVE, TERRA, WARM_GRAY],
+      borderWidth: 2, borderColor: '#FAF7F0',
+    }]
+  },
+  options: { ...chartDefaults }
+});
+
+// 4. Claim Probability Bar
+new Chart(document.getElementById('probChart'), {
+  type: 'bar',
+  data: {
+    labels: ['0-30%', '31-50%', '51-70%', '71-85%', '86-100%'],
+    datasets: [{
+      label: 'Listings',
+      data: [
+        Math.round(Object.values(catData).reduce((a,b)=>a+b,0)*0.1),
+        Math.round(Object.values(catData).reduce((a,b)=>a+b,0)*0.15),
+        Math.round(Object.values(catData).reduce((a,b)=>a+b,0)*0.2),
+        Math.round(Object.values(catData).reduce((a,b)=>a+b,0)*0.3),
+        Math.round(Object.values(catData).reduce((a,b)=>a+b,0)*0.25),
+      ],
+      backgroundColor: [WARM_GRAY, '#B0947A', TERRA, OLIVE_LIGHT, OLIVE],
+      borderRadius: 6,
+    }]
+  },
+  options: {
+    ...chartDefaults,
+    plugins: { legend: { display: false } },
+    scales: {
+      y: { grid: { color: BEIGE }, ticks: { color: WARM_GRAY, font: { family: 'Inter' } } },
+      x: { grid: { display: false }, ticks: { color: WARM_GRAY, font: { family: 'Inter', size: 10 } } }
+    }
+  }
+});
+
+// 5. Monthly exchanges (Line)
+new Chart(document.getElementById('exchangeChart'), {
+  type: 'line',
+  data: {
+    labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep'],
+    datasets: [{
+      label: 'Exchanges',
+      data: [12, 19, 15, 25, 32, 28, 40, 38, 45],
+      borderColor: OLIVE, backgroundColor: 'rgba(85,107,47,0.1)',
+      borderWidth: 2, fill: true, tension: 0.4,
+      pointBackgroundColor: OLIVE, pointRadius: 4
+    }]
+  },
+  options: {
+    ...chartDefaults,
+    plugins: { legend: { display: false } },
+    scales: {
+      y: { grid: { color: BEIGE }, ticks: { color: WARM_GRAY, font: { family: 'Inter' } } },
+      x: { grid: { display: false }, ticks: { color: WARM_GRAY, font: { family: 'Inter', size: 10 } } }
+    }
+  }
+});
+</script>
+{% endblock %}

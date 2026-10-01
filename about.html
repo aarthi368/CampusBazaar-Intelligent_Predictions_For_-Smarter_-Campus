@@ -1,0 +1,201 @@
+{% extends "base.html" %}
+{% block title %}About CampusBazar{% endblock %}
+
+{% block content %}
+
+<!-- Hero -->
+<div class="about-hero">
+  <div class="container">
+    <div class="section-tag" style="color:var(--cream);background:rgba(250,247,240,0.1);display:inline-flex;margin-bottom:1rem;">
+      <i class="fas fa-leaf"></i> Our Story
+    </div>
+    <h1>About CampusBazar</h1>
+    <p>
+      Designed to make campus trading smarter, faster, and more sustainable —
+      powered by machine learning and student community.
+    </p>
+  </div>
+</div>
+
+<section class="section" style="background:var(--cream);">
+  <div class="container">
+
+    <!-- What is CampusBazar -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:4rem;">
+      <div>
+        <div class="section-tag"><i class="fas fa-store-alt"></i> What Is CampusBazar?</div>
+        <h2 style="font-size:1.85rem;margin-bottom:1rem;">A Smarter Way to Trade on Campus</h2>
+        <p style="color:var(--warm-gray);line-height:1.8;margin-bottom:1rem;">
+          CampusBazar is a student-only campus marketplace where you can buy, sell, and exchange
+          useful items within your academic community. Unlike generic marketplaces, CampusBazar
+          is designed specifically for the campus environment.
+        </p>
+        <p style="color:var(--warm-gray);line-height:1.8;margin-bottom:1.5rem;">
+          What makes us different? Our <strong style="color:var(--charcoal);">ML-powered prediction system</strong>
+          analyzes your listing and predicts how quickly it will be claimed — before you even post it.
+          This helps you optimize your listings for maximum visibility and faster trades.
+        </p>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          {% for point in ['Exclusively for campus students', 'ML-powered claim speed prediction', 'Smart listing suggestions', 'Category-aware demand analysis', 'Zero commission. Free to use.'] %}
+          <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.9rem;">
+            <i class="fas fa-check-circle" style="color:var(--olive);"></i>
+            <span>{{ point }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div>
+        <div class="card" style="padding:2rem;">
+          <div style="text-align:center;margin-bottom:1.5rem;">
+            <div style="font-size:3rem;margin-bottom:0.5rem;">🏪</div>
+            <h3 style="font-size:1.1rem;">Campus-First Design</h3>
+            <p style="font-size:0.85rem;color:var(--warm-gray);">Built for students, by understanding student needs.</p>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+            {% for stat, label in [('600+','Dataset Samples'), ('4','ML Models'), ('77%+','Prediction Accuracy'), ('3','Claim Classes')] %}
+            <div style="text-align:center;padding:1rem;background:var(--cream);border-radius:var(--radius-md);">
+              <div style="font-family:var(--font-head);font-weight:800;font-size:1.5rem;color:var(--dark-olive);">{{ stat }}</div>
+              <div style="font-size:0.75rem;color:var(--warm-gray);">{{ label }}</div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why CampusBazar -->
+    <div style="text-align:center;margin-bottom:2.5rem;">
+      <div class="section-tag"><i class="fas fa-question-circle"></i> Why CampusBazar?</div>
+      <h2 style="font-size:1.85rem;">Problems We Solve</h2>
+    </div>
+
+    <div class="grid-3" style="margin-bottom:4rem;">
+      {% for icon, title, desc in [
+        ('fa-recycle', 'Reduce Campus Waste', 'Every semester, students discard useful books and equipment. CampusBazar gives items a second life instead of the trash.'),
+        ('fa-wallet', 'Save Student Money', 'Used items at fair prices help juniors access the tools they need without the full new price tag.'),
+        ('fa-brain', 'Smarter Listings', 'Our ML model tells you exactly how to optimize your listing for faster claims, not just guesswork.'),
+        ('fa-users', 'Build Community', 'Trading within campus builds trust, reduces scams, and strengthens the academic community.'),
+        ('fa-clock', 'Save Time', 'Instead of hunting across generic platforms, find exactly what you need from people in your own department.'),
+        ('fa-chart-line', 'Data-Driven Insights', 'Understand real campus demand patterns through our ML Insights page — valuable for presentations.')
+      ] %}
+      <div class="card" style="padding:1.5rem;">
+        <div style="width:48px;height:48px;background:rgba(85,107,47,0.08);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;color:var(--olive);font-size:1.25rem;margin-bottom:1rem;">
+          <i class="fas {{ icon }}"></i>
+        </div>
+        <h3 style="font-size:0.95rem;font-weight:700;margin-bottom:0.5rem;">{{ title }}</h3>
+        <p style="font-size:0.85rem;color:var(--warm-gray);line-height:1.6;">{{ desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Circular Economy -->
+    <div style="background:var(--white);border:1px solid var(--beige);border-radius:var(--radius-xl);padding:2.5rem;margin-bottom:4rem;text-align:center;">
+      <div class="section-tag"><i class="fas fa-recycle"></i> Circular Economy</div>
+      <h2 style="font-size:1.5rem;margin-bottom:0.75rem;">The Reuse Cycle</h2>
+      <p style="color:var(--warm-gray);max-width:500px;margin:0 auto 2rem;font-size:0.9rem;">
+        CampusBazar follows the circular economy model — every item that finds a new home
+        reduces manufacturing demand and waste.
+      </p>
+      <div class="circular-economy">
+        {% for icon, label in [('🛒','Buy'),('📚','Use'),('🔄','Reuse'),('🤝','Exchange'),('🌱','Less Waste')] %}
+        <div class="eco-step">
+          <div class="eco-icon">{{ icon }}</div>
+          <span>{{ label }}</span>
+        </div>
+        {% if not loop.last %}
+        <div class="eco-arrow"><i class="fas fa-arrow-right"></i></div>
+        {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- How ML Helps -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-bottom:4rem;">
+      <div class="card" style="padding:2rem;">
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1.25rem;">
+          <i class="fas fa-robot" style="color:var(--olive);"></i> ML Pipeline
+        </h3>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;font-size:0.85rem;">
+          {% for step in ['Item details submitted by student', 'Categorical features encoded (Label Encoding)', 'Numerical features normalized (StandardScaler)', 'Best ML model processes input (Random Forest)', 'Claim class + probability returned', 'Explainable reasons + suggestions displayed'] %}
+          <div style="display:flex;align-items:flex-start;gap:0.6rem;">
+            <div style="width:20px;height:20px;background:var(--olive);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:0.65rem;font-weight:700;flex-shrink:0;margin-top:1px;">{{ loop.index }}</div>
+            <span style="color:var(--warm-gray);">{{ step }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div>
+        <div class="section-tag"><i class="fas fa-robot"></i> Machine Learning</div>
+        <h2 style="font-size:1.6rem;margin-bottom:1rem;">How ML Helps Students</h2>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          {% for title, desc in [
+            ('Claim Speed Prediction', 'Know if your item will be claimed within 1 day, 1 week, or has low probability — before posting.'),
+            ('Listing Optimization', 'Get specific, actionable suggestions to improve your listing (price, description, photos, edition details).'),
+            ('Demand Analysis', 'Understand which categories are in high demand based on department and semester patterns.'),
+            ('Confidence Score', 'Each prediction comes with a confidence score so you know how reliable the estimate is.')
+          ] %}
+          <div style="display:flex;gap:0.75rem;">
+            <i class="fas fa-check-circle" style="color:var(--olive);flex-shrink:0;margin-top:3px;"></i>
+            <div>
+              <div style="font-weight:700;font-size:0.9rem;margin-bottom:0.2rem;">{{ title }}</div>
+              <div style="font-size:0.82rem;color:var(--warm-gray);line-height:1.6;">{{ desc }}</div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <a href="{{ url_for('ml_insights') }}" class="btn btn-primary btn-lg" style="margin-top:1.5rem;">
+          <i class="fas fa-chart-bar"></i> View ML Insights
+        </a>
+      </div>
+    </div>
+
+    <!-- Future improvements -->
+    <div style="margin-bottom:4rem;">
+      <div class="section-tag"><i class="fas fa-rocket"></i> Future Vision</div>
+      <h2 style="font-size:1.5rem;margin-bottom:2rem;">What's Coming Next</h2>
+      <div class="grid-4">
+        {% for icon, title, desc in [
+          ('fa-bell', 'Smart Notifications', 'Get notified when a desired item is listed in your department.'),
+          ('fa-camera', 'Image Recognition', 'Auto-detect category from uploaded product photos using CV.'),
+          ('fa-star', 'Rating System', 'Trust ratings for buyers and sellers to ensure safe trades.'),
+          ('fa-mobile-alt', 'Mobile App', 'Native mobile app for faster listing and browsing on campus.')
+        ] %}
+        <div class="card" style="padding:1.25rem;">
+          <div style="font-size:1.25rem;color:var(--terracotta);margin-bottom:0.75rem;"><i class="fas {{ icon }}"></i></div>
+          <h4 style="font-size:0.88rem;font-weight:700;margin-bottom:0.35rem;">{{ title }}</h4>
+          <p style="font-size:0.78rem;color:var(--warm-gray);">{{ desc }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Team -->
+    <div>
+      <div class="section-tag"><i class="fas fa-users"></i> Project Team</div>
+      <h2 style="font-size:1.5rem;margin-bottom:2rem;">Built With ❤️ for Campus Life</h2>
+      <div class="grid-4">
+        {% for init, name, role in [
+          ('AS','Aarthi Student','Full Stack Developer'),
+          ('RK','Ravi Kumar','ML Engineer'),
+          ('PS','Priya Sharma','UI/UX Designer'),
+          ('MS','Meera S.','Data Analyst')
+        ] %}
+        <div class="team-card">
+          <div class="team-avatar">{{ init }}</div>
+          <h4>{{ name }}</h4>
+          <span>{{ role }}</span>
+        </div>
+        {% endfor %}
+      </div>
+      <div style="text-align:center;margin-top:2rem;padding:1.5rem;background:var(--charcoal);border-radius:var(--radius-xl);color:var(--cream);">
+        <p style="font-size:1.05rem;line-height:1.8;max-width:640px;margin:0 auto;">
+          <em>"CampusBazar is designed to make campus trading smarter, faster, and more sustainable.
+          We believe every student deserves access to affordable tools and a community they can trust."</em>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

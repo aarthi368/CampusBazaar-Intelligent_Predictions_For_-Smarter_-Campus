@@ -1,0 +1,198 @@
+{% extends "base.html" %}
+{% block title %}Prediction Result{% endblock %}
+
+{% block content %}
+
+{% if prediction %}
+{% set prob = prediction.claim_probability %}
+{% set speed = prediction.claim_speed %}
+{% set demand = prediction.demand_level %}
+{% set conf = prediction.confidence %}
+{% set reasons = prediction.reasons %}
+{% set suggestions = prediction.suggestions %}
+{% set color = '#556B2F' if speed == 'Within 1 Day' else ('#C76B4A' if speed == 'Within 1 Week' else '#78716C') %}
+{% set ring_offset = 339.3 - (prob / 100) * 339.3 %}
+
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="{{ url_for('index') }}">Home</a>
+      <i class="fas fa-chevron-right" style="font-size:0.65rem;"></i>
+      <a href="{{ url_for('list_item') }}">List an Item</a>
+      <i class="fas fa-chevron-right" style="font-size:0.65rem;"></i>
+      <span>Prediction Result</span>
+    </div>
+    <h1><i class="fas fa-robot" style="color:var(--terracotta);"></i> Your ML Prediction</h1>
+    {% if item_info %}
+    <p>Results for: <strong style="color:var(--cream);">{{ item_info.item_name }}</strong></p>
+    {% endif %}
+  </div>
+</div>
+
+<section class="section-sm">
+  <div class="container-sm">
+
+    <!-- Main prediction result -->
+    <div class="card" style="padding:2.5rem;text-align:center;margin-bottom:1.5rem;position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-40px;right:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(85,107,47,0.05) 0%,transparent 70%);pointer-events:none;"></div>
+      
+      <div class="section-tag" style="margin-bottom:1.5rem;">
+        <i class="fas fa-chart-pie"></i> ML Analysis Complete
+      </div>
+
+      <!-- Big probability ring -->
+      <div class="pred-ring-large">
+        <svg width="200" height="200" viewBox="0 0 120 120" style="position:absolute;inset:0;transform:rotate(-90deg);">
+          <circle cx="60" cy="60" r="54" fill="none" stroke="#E7E1D8" stroke-width="10"/>
+          <circle id="predRing" cx="60" cy="60" r="54" fill="none"
+            stroke="{{ color }}" stroke-width="10" stroke-linecap="round"
+            stroke-dasharray="339.3" stroke-dashoffset="339.3"/>
+        </svg>
+        <div class="pred-ring-inner">
+          <div class="pct-large">{{ prob }}%</div>
+          <div class="pct-lbl">Claim Probability</div>
+          <div class="speed-lbl">
+            <i class="fas fa-bolt"></i> {{ speed }}
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 stat cards -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:480px;margin:0 auto 1.5rem;">
+        <div class="pred-mini">
+          <div class="val" style="color:{{ '#3F4F23' if demand == 'High' else ('#7F3928' if demand == 'Medium' else '#78716C') }};">
+            {{ demand|upper }}
+          </div>
+          <div class="lbl">Demand</div>
+        </div>
+        <div class="pred-mini">
+          <div class="val">{{ conf }}%</div>
+          <div class="lbl">Confidence</div>
+        </div>
+        <div class="pred-mini">
+          <div class="val">{{ '1–2d' if speed == 'Within 1 Day' else ('3–7d' if speed == 'Within 1 Week' else '7d+') }}</div>
+          <div class="lbl">Est. Time</div>
+        </div>
+      </div>
+
+      {% if item_info %}
+      <div style="display:inline-flex;align-items:center;gap:0.75rem;background:var(--cream);border:1px solid var(--beige);border-radius:var(--radius-lg);padding:0.75rem 1.25rem;">
+        <div style="text-align:left;">
+          <div style="font-weight:700;font-size:0.9rem;">{{ item_info.item_name }}</div>
+          <div style="font-size:0.8rem;color:var(--warm-gray);">
+            ₹{{ item_info.price }} · {{ item_info.condition }} · {{ item_info.department }} · Sem {{ item_info.semester }}
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;">
+
+      <!-- Why this prediction -->
+      <div class="card" style="padding:1.75rem;">
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:1.25rem;display:flex;align-items:center;gap:0.5rem;">
+          <i class="fas fa-lightbulb" style="color:var(--olive);"></i>
+          Why This Prediction?
+        </h3>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          {% for reason in reasons %}
+          <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.875rem;">
+            {% if reason.positive %}
+            <i class="fas fa-check-circle" style="color:var(--olive);margin-top:2px;flex-shrink:0;"></i>
+            <span style="color:var(--charcoal);">{{ reason.text }}</span>
+            {% else %}
+            <i class="fas fa-exclamation-circle" style="color:var(--terracotta);margin-top:2px;flex-shrink:0;"></i>
+            <span style="color:var(--warm-gray);">{{ reason.text }}</span>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Suggestions -->
+      <div class="card" style="padding:1.75rem;">
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:1.25rem;display:flex;align-items:center;gap:0.5rem;">
+          <i class="fas fa-wand-magic-sparkles" style="color:var(--terracotta);"></i>
+          Improvement Suggestions
+        </h3>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+          {% for sug in suggestions %}
+          <div style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.875rem;">
+            <i class="fas fa-arrow-right" style="color:var(--terracotta);margin-top:3px;flex-shrink:0;font-size:0.7rem;"></i>
+            <span style="color:var(--charcoal);">{{ sug }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Prediction class explanation -->
+    <div class="card" style="padding:1.75rem;margin-bottom:1.5rem;">
+      <h3 style="font-size:1rem;font-weight:700;margin-bottom:1.25rem;">Prediction Classes</h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+        <div style="padding:1rem;border-radius:var(--radius-md);border:2px solid {{ '#556B2F' if speed == 'Within 1 Day' else 'var(--beige)' }};background:{{ 'rgba(85,107,47,0.06)' if speed == 'Within 1 Day' else 'var(--cream)' }};">
+          <div style="font-size:1.25rem;margin-bottom:0.4rem;">⚡</div>
+          <div style="font-weight:700;font-size:0.85rem;color:var(--dark-olive);">Within 1 Day</div>
+          <div style="font-size:0.75rem;color:var(--warm-gray);margin-top:0.25rem;">High demand, competitive price, great condition</div>
+          {% if speed == 'Within 1 Day' %}<div class="badge badge-high" style="margin-top:0.5rem;">✓ Your item</div>{% endif %}
+        </div>
+        <div style="padding:1rem;border-radius:var(--radius-md);border:2px solid {{ '#C76B4A' if speed == 'Within 1 Week' else 'var(--beige)' }};background:{{ 'rgba(199,107,74,0.06)' if speed == 'Within 1 Week' else 'var(--cream)' }};">
+          <div style="font-size:1.25rem;margin-bottom:0.4rem;">📅</div>
+          <div style="font-weight:700;font-size:0.85rem;color:var(--dark-terra);">Within 1 Week</div>
+          <div style="font-size:0.75rem;color:var(--warm-gray);margin-top:0.25rem;">Medium demand, may need slight price adjustment</div>
+          {% if speed == 'Within 1 Week' %}<div class="badge badge-medium" style="margin-top:0.5rem;">✓ Your item</div>{% endif %}
+        </div>
+        <div style="padding:1rem;border-radius:var(--radius-md);border:2px solid {{ '#78716C' if speed == 'Low Probability' else 'var(--beige)' }};background:{{ 'rgba(120,113,108,0.06)' if speed == 'Low Probability' else 'var(--cream)' }};">
+          <div style="font-size:1.25rem;margin-bottom:0.4rem;">🌊</div>
+          <div style="font-weight:700;font-size:0.85rem;color:var(--warm-gray);">Low Probability</div>
+          <div style="font-size:0.75rem;color:var(--warm-gray);margin-top:0.25rem;">Low demand or overpriced — follow suggestions</div>
+          {% if speed == 'Low Probability' %}<div class="badge badge-low" style="margin-top:0.5rem;">✓ Your item</div>{% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Action buttons -->
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
+      <a href="{{ url_for('marketplace') }}" class="btn btn-primary btn-xl">
+        <i class="fas fa-check"></i> Publish to Marketplace
+      </a>
+      <a href="{{ url_for('list_item') }}" class="btn btn-outline btn-xl">
+        <i class="fas fa-edit"></i> Edit Listing
+      </a>
+      <a href="{{ url_for('ml_insights') }}" class="btn btn-ghost btn-xl">
+        <i class="fas fa-robot"></i> How ML Works
+      </a>
+    </div>
+
+  </div>
+</section>
+
+{% else %}
+<!-- Redirect if no prediction -->
+<div class="container" style="padding:4rem 1.5rem;text-align:center;">
+  <div style="font-size:3rem;margin-bottom:1rem;">🔍</div>
+  <h2>No prediction found</h2>
+  <p style="color:var(--warm-gray);margin:1rem 0 2rem;">Start by listing an item to get your ML prediction.</p>
+  <a href="{{ url_for('list_item') }}" class="btn btn-primary btn-xl">List an Item</a>
+</div>
+{% endif %}
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const ring = document.getElementById('predRing');
+  if (ring) {
+    const prob = {{ prediction.claim_probability if prediction else 0 }};
+    const circumference = 2 * Math.PI * 54;
+    const offset = circumference - (prob / 100) * circumference;
+    setTimeout(() => {
+      ring.style.transition = 'stroke-dashoffset 1.4s cubic-bezier(0.22, 1, 0.36, 1)';
+      ring.setAttribute('stroke-dashoffset', offset);
+    }, 300);
+  }
+});
+</script>
+{% endblock %}

@@ -1,0 +1,601 @@
+id,item_name,category,price,condition,department,semester,posting_day,demand_level,claim_speed
+1,Scientific Calculator,Calculators,960,Good,CE,3,Saturday,High,Within 1 Week
+2,Engineering Drawing Kit,Project Materials,320,Like New,CE,1,Friday,Medium,Within 1 Day
+3,Earphones,Electronics,2710,Good,CSE,3,Saturday,Medium,Low Probability
+4,College Backpack,Bags,440,Good,IT,6,Friday,Low,Within 1 Week
+5,Casio FX-991ES,Calculators,280,Good,IT,4,Saturday,High,Within 1 Day
+6,Engineering Drawing Sheets,Stationery,150,Fair,BIO,5,Thursday,Medium,Within 1 Week
+7,Laptop Bag,Bags,800,Fair,ECE,3,Friday,Low,Low Probability
+8,Sketch Pens,Stationery,140,Fair,CSE,4,Sunday,Medium,Within 1 Week
+9,Engineering Drawing Sheets,Stationery,140,Poor,IT,4,Saturday,High,Within 1 Day
+10,Breadboard,Lab Equipment,440,Good,EEE,7,Friday,Medium,Within 1 Day
+11,Water Bottle,Other,100,Fair,ME,3,Sunday,Medium,Within 1 Week
+12,Jumper Wires Bundle,Project Materials,2370,Good,CSE,2,Saturday,High,Within 1 Week
+13,Basic Calculator,Calculators,640,Like New,CSE,5,Friday,High,Within 1 Day
+14,Sketch Pens,Stationery,340,Like New,IT,3,Friday,High,Within 1 Week
+15,Sling Bag,Bags,290,Like New,IT,5,Tuesday,High,Within 1 Day
+16,Sharp Calculator,Calculators,700,Fair,ME,3,Saturday,High,Within 1 Day
+17,Prototype Board,Project Materials,2410,Fair,CE,5,Thursday,Medium,Low Probability
+18,Water Bottle,Other,300,Good,IT,1,Friday,Medium,Within 1 Week
+19,Sharp Calculator,Calculators,850,Like New,ECE,1,Sunday,High,Within 1 Day
+20,College ID Card Holder,Other,600,Like New,CHEM,4,Sunday,Low,Low Probability
+21,Sharp Calculator,Calculators,640,Good,BIO,8,Sunday,High,Within 1 Day
+22,DBMS Book,Books,430,Fair,ECE,4,Tuesday,High,Within 1 Week
+23,Breadboard,Lab Equipment,1100,Good,ECE,8,Sunday,Medium,Within 1 Week
+24,Engineering Mathematics Book,Books,320,Like New,CHEM,8,Tuesday,High,Within 1 Day
+25,Engineering Drawing Kit,Project Materials,1800,Good,CHEM,5,Thursday,High,Within 1 Day
+26,Multimeter,Lab Equipment,760,Good,CSE,1,Saturday,Low,Within 1 Week
+27,Lab Coat,Lab Equipment,1190,Like New,ME,2,Friday,Low,Within 1 Week
+28,HP 35s Scientific,Calculators,450,Good,CSE,2,Thursday,High,Within 1 Day
+29,Rulers Set,Stationery,370,Fair,CE,5,Thursday,High,Within 1 Week
+30,Extension Board,Other,120,Like New,ECE,2,Friday,Low,Within 1 Week
+31,Graphing Calculator,Calculators,580,Good,CHEM,5,Friday,High,Within 1 Day
+32,Signals and Systems,Books,390,Poor,ECE,3,Wednesday,Low,Low Probability
+33,Technical Pens,Stationery,340,Good,IT,4,Saturday,Medium,Within 1 Week
+34,Graph Sheets,Stationery,80,Good,EEE,1,Monday,Low,Within 1 Week
+35,Test Tubes Set,Lab Equipment,1280,Fair,CSE,2,Monday,Medium,Low Probability
+36,Engineering Physics,Books,460,Good,ME,7,Tuesday,Medium,Low Probability
+37,Laptop Bag,Bags,760,Fair,IT,7,Friday,High,Within 1 Week
+38,Vernier Caliper,Lab Equipment,1960,Good,ME,6,Sunday,High,Within 1 Week
+39,Drafting Compass Set,Stationery,390,Like New,CSE,8,Tuesday,High,Within 1 Day
+40,Rulers Set,Stationery,140,Like New,CE,7,Wednesday,Low,Within 1 Week
+41,Trolley Bag,Bags,1070,Fair,IT,1,Monday,Low,Low Probability
+42,Engineering Mathematics Book,Books,520,Good,IT,7,Friday,Medium,Low Probability
+43,Graph Sheets,Stationery,390,Good,CE,6,Thursday,High,Within 1 Week
+44,College Backpack,Bags,860,Good,BIO,6,Thursday,Medium,Within 1 Week
+45,LED Strip,Project Materials,910,Good,EEE,7,Friday,Medium,Within 1 Week
+46,Motor Driver Kit,Project Materials,2100,Good,CE,8,Sunday,High,Within 1 Week
+47,Basic Calculator,Calculators,730,Fair,IT,2,Sunday,Medium,Within 1 Week
+48,Wireless Mouse,Electronics,900,Like New,CE,8,Friday,Low,Within 1 Day
+49,Portable Charger,Electronics,2320,Good,ME,1,Sunday,High,Within 1 Day
+50,Laptop Stand,Electronics,2420,Good,CE,2,Thursday,Medium,Within 1 Week
+51,Sling Bag,Bags,1280,Good,CHEM,3,Saturday,Low,Low Probability
+52,Sketch Pens,Stationery,280,Good,EEE,8,Monday,Medium,Within 1 Week
+53,Trolley Bag,Bags,420,Like New,CE,7,Saturday,Low,Within 1 Day
+54,Motor Driver Kit,Project Materials,2420,Good,CSE,4,Sunday,High,Within 1 Week
+55,Jumper Wires Bundle,Project Materials,220,Poor,EEE,7,Sunday,High,Within 1 Day
+56,College ID Card Holder,Other,330,Good,CSE,7,Wednesday,Medium,Within 1 Week
+57,College ID Card Holder,Other,690,Good,BIO,1,Monday,Low,Low Probability
+58,Lab Coat,Lab Equipment,680,Good,CE,8,Wednesday,High,Within 1 Day
+59,Sensor Module Set,Project Materials,540,Good,CSE,6,Tuesday,High,Within 1 Day
+60,Digital Electronics,Books,280,Fair,ME,4,Tuesday,Medium,Within 1 Week
+61,Planner Diary,Other,310,Fair,ME,2,Sunday,High,Within 1 Week
+62,Engineering Chemistry,Books,400,Good,BIO,7,Saturday,High,Within 1 Week
+63,Sharp Calculator,Calculators,990,Good,ECE,1,Wednesday,High,Within 1 Week
+64,College Backpack,Bags,1110,Fair,ECE,7,Wednesday,Medium,Low Probability
+65,Soldering Kit,Project Materials,2340,Poor,EEE,8,Thursday,High,Within 1 Week
+66,Laptop Bag,Bags,430,Good,CHEM,4,Sunday,Medium,Within 1 Day
+67,College Backpack,Bags,1260,Fair,ME,8,Tuesday,Low,Low Probability
+68,Sketch Pens,Stationery,40,Good,CE,2,Tuesday,Medium,Within 1 Day
+69,Planner Diary,Other,780,Good,CSE,2,Wednesday,Medium,Within 1 Week
+70,Sling Bag,Bags,1380,Good,BIO,6,Wednesday,Low,Low Probability
+71,Raspberry Pi,Electronics,1090,Good,ME,4,Tuesday,Medium,Within 1 Day
+72,Engineering Drawing Sheets,Stationery,130,Good,IT,3,Wednesday,High,Within 1 Day
+73,Graph Sheets,Stationery,60,Good,ME,8,Monday,Medium,Within 1 Day
+74,Table Lamp,Other,400,Like New,CSE,5,Sunday,Medium,Within 1 Day
+75,Water Bottle,Other,640,Good,CSE,3,Tuesday,High,Within 1 Week
+76,Raspberry Pi,Electronics,2580,Fair,CE,7,Thursday,Medium,Low Probability
+77,Geometry Box,Stationery,350,Like New,ECE,4,Saturday,Medium,Within 1 Week
+78,Laptop Stand,Electronics,2560,Like New,CSE,7,Thursday,High,Within 1 Week
+79,USB Hub,Electronics,1460,Fair,CHEM,2,Saturday,Medium,Within 1 Week
+80,Mini Drill Machine,Project Materials,2430,Good,ME,5,Sunday,Low,Low Probability
+81,Geometry Box,Stationery,320,Poor,CHEM,2,Thursday,Medium,Low Probability
+82,Table Lamp,Other,130,Good,BIO,6,Friday,Low,Within 1 Week
+83,Geometry Box,Stationery,50,Fair,ME,8,Friday,High,Within 1 Day
+84,Jumper Wires Bundle,Project Materials,570,Good,BIO,6,Wednesday,High,Within 1 Day
+85,Jumper Wires Bundle,Project Materials,1380,Fair,BIO,1,Thursday,Medium,Within 1 Week
+86,Casio FX-991ES,Calculators,1080,Good,CSE,8,Thursday,High,Within 1 Week
+87,Planner Diary,Other,500,Fair,CE,5,Friday,Medium,Within 1 Week
+88,Water Bottle,Other,80,Poor,CE,3,Wednesday,Medium,Within 1 Week
+89,Raspberry Pi,Electronics,2190,Poor,ME,8,Saturday,High,Within 1 Week
+90,Table Lamp,Other,300,Good,ME,7,Tuesday,Medium,Within 1 Week
+91,Basic Calculator,Calculators,990,Fair,BIO,6,Sunday,High,Within 1 Week
+92,Geometry Box,Stationery,330,Poor,CHEM,3,Thursday,Medium,Low Probability
+93,Extension Board,Other,240,Poor,CE,7,Tuesday,Low,Low Probability
+94,Planner Diary,Other,440,Good,ME,8,Monday,High,Within 1 Day
+95,Casio FX-991ES,Calculators,300,Good,CHEM,1,Saturday,High,Within 1 Day
+96,Casio FX-991ES,Calculators,1000,Poor,IT,7,Saturday,Medium,Low Probability
+97,Sling Bag,Bags,1360,Like New,ECE,4,Saturday,Low,Low Probability
+98,Casio FX-991ES,Calculators,300,Fair,ECE,8,Tuesday,High,Within 1 Day
+99,College Backpack,Bags,850,Good,BIO,3,Tuesday,Medium,Within 1 Week
+100,Vernier Caliper,Lab Equipment,310,Good,BIO,4,Thursday,Low,Within 1 Week
+101,Lab Manual,Stationery,160,Fair,CHEM,5,Saturday,Low,Low Probability
+102,Record Notebook,Stationery,380,Good,EEE,4,Thursday,Low,Low Probability
+103,Trolley Bag,Bags,860,Poor,EEE,1,Sunday,Low,Low Probability
+104,Extension Board,Other,280,Good,IT,4,Saturday,Low,Low Probability
+105,Sharp Calculator,Calculators,860,Like New,CHEM,1,Friday,Medium,Within 1 Week
+106,Sling Bag,Bags,610,Good,IT,5,Sunday,High,Within 1 Day
+107,Highlighters Set,Stationery,90,Good,ECE,3,Sunday,High,Within 1 Day
+108,College Backpack,Bags,1060,Like New,ECE,8,Wednesday,Medium,Within 1 Week
+109,College Backpack,Bags,730,Good,IT,4,Saturday,Medium,Within 1 Week
+110,Mini Drill Machine,Project Materials,770,Like New,CSE,5,Thursday,Low,Within 1 Week
+111,Jumper Wires Bundle,Project Materials,1720,Fair,BIO,3,Thursday,High,Within 1 Week
+112,Graph Sheets,Stationery,380,Good,CHEM,8,Tuesday,Low,Low Probability
+113,College Backpack,Bags,1060,Good,ECE,8,Monday,Medium,Low Probability
+114,Machine Learning Book,Books,420,Good,ME,4,Monday,High,Within 1 Week
+115,HDMI Cable,Electronics,900,Fair,CSE,5,Sunday,High,Within 1 Day
+116,Safety Goggles,Lab Equipment,1500,Fair,ME,1,Wednesday,Medium,Low Probability
+117,Programming in Python,Books,350,Like New,BIO,2,Saturday,Medium,Within 1 Day
+118,Casio FX-991ES,Calculators,720,Good,CSE,5,Thursday,Low,Within 1 Week
+119,LED Strip,Project Materials,640,Good,CHEM,2,Monday,Low,Within 1 Week
+120,Geometry Box,Stationery,350,Good,IT,7,Friday,Medium,Within 1 Week
+121,Sharp Calculator,Calculators,320,Fair,CE,7,Thursday,High,Within 1 Day
+122,LED Strip,Project Materials,590,Good,IT,5,Wednesday,Medium,Within 1 Day
+123,Scientific Calculator,Calculators,1050,Like New,BIO,2,Saturday,High,Within 1 Week
+124,College Backpack,Bags,1090,Good,BIO,1,Wednesday,Low,Low Probability
+125,Laptop Stand,Electronics,2990,Good,ECE,6,Sunday,Medium,Within 1 Week
+126,Portable Charger,Electronics,2600,Poor,CSE,5,Monday,High,Within 1 Week
+127,Drawstring Bag,Bags,260,Like New,ME,7,Monday,High,Within 1 Day
+128,Sharp Calculator,Calculators,740,Good,BIO,8,Wednesday,Medium,Within 1 Week
+129,Scientific Calculator,Calculators,360,Like New,CSE,2,Wednesday,High,Within 1 Day
+130,Sensor Module Set,Project Materials,1080,Fair,ECE,6,Thursday,High,Within 1 Day
+131,Graph Sheets,Stationery,140,Good,CSE,1,Tuesday,Medium,Within 1 Day
+132,Technical Pens,Stationery,200,Like New,CHEM,7,Tuesday,High,Within 1 Day
+133,College Backpack,Bags,1060,Fair,CSE,7,Monday,Low,Low Probability
+134,LED Strip,Project Materials,1910,Good,BIO,1,Wednesday,High,Within 1 Day
+135,College Backpack,Bags,1140,Fair,CE,7,Friday,Low,Low Probability
+136,Laptop Bag,Bags,930,Fair,ECE,2,Friday,High,Within 1 Day
+137,Laptop Bag,Bags,730,Like New,EEE,4,Tuesday,Medium,Within 1 Week
+138,Test Tubes Set,Lab Equipment,1100,Fair,CHEM,6,Sunday,Medium,Within 1 Week
+139,Casio FX-991ES,Calculators,650,Good,EEE,1,Wednesday,Medium,Within 1 Week
+140,Data Structures Book,Books,460,Fair,ECE,2,Friday,Medium,Low Probability
+141,Sticky Notes,Other,720,Like New,CHEM,3,Monday,Medium,Within 1 Week
+142,HP 35s Scientific,Calculators,860,Like New,CE,8,Thursday,High,Within 1 Day
+143,Drawstring Bag,Bags,1040,Good,IT,1,Sunday,Low,Low Probability
+144,HP 35s Scientific,Calculators,890,Good,EEE,3,Wednesday,High,Within 1 Week
+145,Drawstring Bag,Bags,1050,Like New,ECE,5,Friday,Medium,Within 1 Week
+146,Sharp Calculator,Calculators,890,Good,IT,1,Wednesday,High,Within 1 Week
+147,College ID Card Holder,Other,280,Poor,ME,2,Wednesday,Low,Low Probability
+148,Signals and Systems,Books,420,Fair,ME,7,Tuesday,High,Within 1 Week
+149,Water Bottle,Other,470,Good,CE,8,Friday,Medium,Within 1 Week
+150,Keyboard,Electronics,1280,Good,CHEM,4,Wednesday,High,Within 1 Day
+151,Extension Board,Other,440,Good,BIO,3,Sunday,Medium,Within 1 Week
+152,Signals and Systems,Books,570,Fair,ECE,2,Wednesday,Low,Low Probability
+153,Sticky Notes,Other,200,Fair,ECE,4,Sunday,Low,Low Probability
+154,Engineering Drawing Kit,Project Materials,1820,Good,CE,7,Monday,Low,Low Probability
+155,Laptop Bag,Bags,530,Like New,CHEM,3,Sunday,Low,Within 1 Week
+156,Scientific Calculator,Calculators,460,Good,ME,7,Monday,Medium,Within 1 Day
+157,Digital Electronics,Books,510,Good,CHEM,2,Monday,High,Within 1 Week
+158,Laptop Stand,Electronics,1490,Good,IT,4,Friday,High,Within 1 Day
+159,College Backpack,Bags,1330,Good,CSE,7,Sunday,Medium,Within 1 Week
+160,Graph Sheets,Stationery,210,Fair,IT,4,Saturday,Low,Low Probability
+161,Lab Coat,Lab Equipment,870,Good,ME,8,Saturday,Low,Low Probability
+162,Sharp Calculator,Calculators,990,Poor,CSE,5,Tuesday,Low,Low Probability
+163,Drawstring Bag,Bags,1300,Good,CHEM,5,Monday,Low,Low Probability
+164,Engineering Physics,Books,420,Good,IT,7,Thursday,High,Within 1 Week
+165,Laptop Bag,Bags,1270,Fair,IT,5,Sunday,Medium,Low Probability
+166,Soldering Kit,Project Materials,2430,Good,ECE,2,Wednesday,Medium,Within 1 Week
+167,Test Tubes Set,Lab Equipment,870,Good,IT,7,Wednesday,High,Within 1 Day
+168,Sharp Calculator,Calculators,850,Good,ME,1,Tuesday,High,Within 1 Day
+169,Programming in Python,Books,150,Good,IT,6,Thursday,Low,Within 1 Week
+170,Extension Board,Other,430,Good,ECE,3,Friday,Low,Low Probability
+171,Raspberry Pi,Electronics,410,Fair,CHEM,7,Friday,Medium,Within 1 Day
+172,Webcam,Electronics,1470,Fair,CHEM,4,Monday,Low,Low Probability
+173,Test Tubes Set,Lab Equipment,330,Fair,IT,6,Saturday,High,Within 1 Day
+174,Drafting Compass Set,Stationery,390,Fair,ME,6,Friday,High,Within 1 Week
+175,Earphones,Electronics,410,Good,IT,8,Sunday,Medium,Within 1 Week
+176,Basic Calculator,Calculators,610,Poor,CHEM,7,Sunday,High,Within 1 Week
+177,College Backpack,Bags,1170,Good,IT,3,Sunday,Medium,Low Probability
+178,Oscilloscope Probe,Lab Equipment,1180,Poor,CSE,2,Friday,Low,Low Probability
+179,HDMI Cable,Electronics,2420,Fair,ECE,5,Tuesday,High,Within 1 Week
+180,Geometry Box,Stationery,300,Like New,ME,3,Tuesday,High,Within 1 Day
+181,Engineering Physics,Books,110,Like New,EEE,4,Sunday,High,Within 1 Day
+182,Planner Diary,Other,610,Good,EEE,8,Tuesday,Medium,Within 1 Week
+183,Water Bottle,Other,760,Like New,CHEM,7,Thursday,Low,Low Probability
+184,Drawstring Bag,Bags,960,Poor,ME,6,Friday,Low,Low Probability
+185,Basic Calculator,Calculators,660,Good,ECE,1,Wednesday,High,Within 1 Day
+186,Laptop Stand,Electronics,1640,Poor,IT,4,Sunday,High,Within 1 Day
+187,Extension Board,Other,560,Like New,BIO,8,Tuesday,Low,Low Probability
+188,Lab Manual,Stationery,340,Fair,CHEM,5,Friday,Low,Low Probability
+189,Breadboard,Lab Equipment,1640,Good,BIO,6,Monday,Medium,Low Probability
+190,Trolley Bag,Bags,840,Like New,CHEM,5,Sunday,Medium,Within 1 Week
+191,Safety Goggles,Lab Equipment,960,Good,IT,6,Sunday,High,Within 1 Day
+192,Engineering Drawing Kit,Project Materials,380,Like New,IT,8,Friday,Medium,Within 1 Day
+193,Soldering Iron,Lab Equipment,1400,Good,BIO,5,Friday,High,Within 1 Day
+194,Lab Manual,Stationery,40,Good,ECE,7,Friday,High,Within 1 Day
+195,Extension Board,Other,720,Fair,CE,1,Friday,Medium,Low Probability
+196,Multimeter,Lab Equipment,210,Good,ECE,4,Monday,Medium,Within 1 Day
+197,Portable Charger,Electronics,2360,Fair,CHEM,1,Saturday,Low,Low Probability
+198,Sticky Notes,Other,440,Good,ME,8,Friday,Low,Low Probability
+199,College ID Card Holder,Other,300,Good,EEE,4,Wednesday,Medium,Within 1 Week
+200,Sling Bag,Bags,960,Good,EEE,5,Monday,Medium,Within 1 Week
+201,Laptop Bag,Bags,840,Like New,ECE,6,Thursday,Medium,Within 1 Week
+202,Keyboard,Electronics,1410,Poor,EEE,3,Monday,High,Within 1 Week
+203,Signals and Systems,Books,310,Good,CSE,2,Thursday,High,Within 1 Day
+204,Discrete Mathematics,Books,240,Good,CHEM,8,Saturday,High,Within 1 Day
+205,Graph Sheets,Stationery,80,Fair,CE,1,Tuesday,High,Within 1 Day
+206,Jumper Wires Bundle,Project Materials,960,Poor,EEE,1,Monday,Medium,Within 1 Week
+207,Lab Manual,Stationery,360,Good,CHEM,3,Sunday,Medium,Low Probability
+208,Laptop Bag,Bags,1190,Good,ME,1,Saturday,Low,Low Probability
+209,Bunsen Burner,Lab Equipment,1900,Good,BIO,7,Friday,Medium,Low Probability
+210,Vernier Caliper,Lab Equipment,1130,Good,CE,1,Wednesday,Medium,Within 1 Week
+211,Drawstring Bag,Bags,1440,Fair,CSE,5,Saturday,Low,Low Probability
+212,Extension Board,Other,210,Good,EEE,2,Saturday,Low,Within 1 Week
+213,Laptop Stand,Electronics,2260,Like New,IT,7,Saturday,High,Within 1 Day
+214,Webcam,Electronics,640,Good,IT,2,Friday,High,Within 1 Day
+215,Webcam,Electronics,2500,Like New,IT,8,Monday,High,Within 1 Day
+216,HP 35s Scientific,Calculators,660,Fair,CHEM,3,Friday,High,Within 1 Day
+217,Graph Sheets,Stationery,230,Good,CSE,4,Friday,Medium,Within 1 Week
+218,HP 35s Scientific,Calculators,260,Poor,ECE,8,Monday,Medium,Within 1 Week
+219,Motor Driver Kit,Project Materials,1770,Good,BIO,7,Monday,Medium,Low Probability
+220,College Backpack,Bags,620,Poor,BIO,3,Saturday,Medium,Within 1 Week
+221,Lab Manual,Stationery,370,Fair,BIO,7,Sunday,Medium,Low Probability
+222,Rulers Set,Stationery,90,Like New,BIO,1,Tuesday,Low,Within 1 Week
+223,Sticky Notes,Other,740,Fair,CSE,4,Saturday,Medium,Low Probability
+224,Arduino Kit,Electronics,870,Good,EEE,4,Sunday,High,Within 1 Day
+225,USB Hub,Electronics,890,Poor,CE,7,Wednesday,High,Within 1 Day
+226,Jumper Wires Bundle,Project Materials,390,Poor,BIO,6,Saturday,Low,Low Probability
+227,Measuring Flask,Lab Equipment,1120,Good,CE,5,Sunday,High,Within 1 Day
+228,LED Strip,Project Materials,2480,Good,BIO,4,Wednesday,Medium,Within 1 Week
+229,College Backpack,Bags,1350,Fair,CE,1,Wednesday,Medium,Low Probability
+230,Graphing Calculator,Calculators,1020,Fair,CE,8,Tuesday,Medium,Low Probability
+231,Wireless Mouse,Electronics,780,Fair,CHEM,4,Saturday,Medium,Within 1 Week
+232,Drawstring Bag,Bags,1030,Good,IT,5,Wednesday,High,Within 1 Day
+233,Sharp Calculator,Calculators,680,Fair,IT,4,Wednesday,Low,Low Probability
+234,Lab Coat,Lab Equipment,680,Good,BIO,5,Tuesday,Medium,Within 1 Day
+235,Sticky Notes,Other,720,Poor,IT,5,Sunday,High,Within 1 Week
+236,College ID Card Holder,Other,800,Fair,ME,3,Saturday,Low,Low Probability
+237,Engineering Physics,Books,160,Poor,CSE,1,Thursday,High,Within 1 Day
+238,Sharp Calculator,Calculators,350,Like New,CHEM,6,Monday,High,Within 1 Day
+239,Water Bottle,Other,60,Good,BIO,1,Monday,Low,Within 1 Week
+240,Discrete Mathematics,Books,520,Fair,ME,2,Monday,Medium,Low Probability
+241,Highlighters Set,Stationery,170,Fair,ECE,6,Thursday,Medium,Within 1 Week
+242,Engineering Drawing Sheets,Stationery,360,Poor,CSE,2,Thursday,Medium,Low Probability
+243,Control Systems,Books,260,Like New,BIO,6,Friday,High,Within 1 Day
+244,Digital Electronics,Books,300,Poor,CHEM,5,Monday,High,Within 1 Week
+245,Programming in Python,Books,400,Like New,CE,3,Sunday,High,Within 1 Week
+246,Drafting Compass Set,Stationery,320,Good,BIO,6,Thursday,Low,Low Probability
+247,College Backpack,Bags,450,Good,ECE,6,Friday,High,Within 1 Day
+248,College Backpack,Bags,810,Fair,CHEM,8,Tuesday,High,Within 1 Day
+249,Bunsen Burner,Lab Equipment,1500,Good,EEE,4,Saturday,Medium,Low Probability
+250,Soldering Kit,Project Materials,1800,Good,ECE,2,Monday,Medium,Within 1 Week
+251,Graphing Calculator,Calculators,290,Like New,CHEM,7,Monday,Medium,Within 1 Day
+252,Sling Bag,Bags,280,Good,BIO,2,Saturday,High,Within 1 Day
+253,Oscilloscope Probe,Lab Equipment,500,Like New,EEE,5,Thursday,Low,Within 1 Day
+254,Record Notebook,Stationery,180,Good,ECE,6,Wednesday,High,Within 1 Day
+255,Earphones,Electronics,740,Like New,CSE,7,Wednesday,Medium,Within 1 Day
+256,Extension Board,Other,490,Fair,ME,5,Wednesday,Medium,Within 1 Week
+257,Laptop Bag,Bags,1060,Poor,EEE,8,Friday,Low,Low Probability
+258,Motor Driver Kit,Project Materials,670,Poor,CE,3,Saturday,Low,Within 1 Week
+259,Earphones,Electronics,1490,Fair,ECE,7,Saturday,High,Within 1 Week
+260,Drafting Compass Set,Stationery,400,Good,BIO,2,Thursday,Medium,Within 1 Week
+261,Engineering Drawing Kit,Project Materials,1670,Fair,ECE,2,Sunday,Medium,Low Probability
+262,Compiler Design Book,Books,490,Poor,IT,7,Monday,Medium,Low Probability
+263,Earphones,Electronics,1830,Good,ME,6,Monday,Medium,Within 1 Week
+264,Sharp Calculator,Calculators,340,Good,IT,8,Sunday,High,Within 1 Day
+265,Casio FX-991ES,Calculators,940,Fair,IT,2,Wednesday,High,Within 1 Week
+266,Engineering Physics,Books,430,Good,ME,4,Friday,Medium,Within 1 Week
+267,College ID Card Holder,Other,460,Good,ME,7,Thursday,High,Within 1 Day
+268,Sticky Notes,Other,490,Good,CE,4,Wednesday,Medium,Within 1 Week
+269,HP 35s Scientific,Calculators,390,Good,CE,8,Monday,High,Within 1 Day
+270,Trolley Bag,Bags,1040,Good,ECE,6,Wednesday,Medium,Within 1 Week
+271,Sharp Calculator,Calculators,340,Good,CE,5,Monday,High,Within 1 Day
+272,LED Strip,Project Materials,760,Good,BIO,3,Thursday,Medium,Within 1 Day
+273,Test Tubes Set,Lab Equipment,740,Like New,IT,8,Friday,Medium,Within 1 Week
+274,College ID Card Holder,Other,250,Fair,CHEM,7,Saturday,Medium,Within 1 Day
+275,College ID Card Holder,Other,130,Good,CE,5,Monday,Medium,Within 1 Day
+276,Sticky Notes,Other,560,Good,ECE,2,Wednesday,Medium,Within 1 Week
+277,Machine Learning Book,Books,530,Good,BIO,2,Saturday,High,Within 1 Week
+278,Algorithms Book,Books,350,Good,ECE,8,Sunday,High,Within 1 Day
+279,Webcam,Electronics,1740,Fair,BIO,3,Friday,Low,Low Probability
+280,Compiler Design Book,Books,440,Good,ME,6,Saturday,High,Within 1 Day
+281,Graphing Calculator,Calculators,1180,Fair,BIO,1,Wednesday,Medium,Low Probability
+282,Laptop Stand,Electronics,1620,Fair,BIO,8,Tuesday,Medium,Within 1 Week
+283,Jumper Wires Bundle,Project Materials,510,Good,ECE,7,Friday,Medium,Within 1 Day
+284,Table Lamp,Other,380,Good,ECE,8,Saturday,Low,Low Probability
+285,Prototype Board,Project Materials,1960,Fair,CHEM,5,Wednesday,Medium,Low Probability
+286,Extension Board,Other,750,Fair,CSE,2,Saturday,Low,Low Probability
+287,Test Tubes Set,Lab Equipment,1080,Like New,BIO,4,Saturday,High,Within 1 Day
+288,Breadboard,Lab Equipment,340,Fair,EEE,2,Wednesday,Medium,Within 1 Week
+289,Sensor Module Set,Project Materials,1160,Good,ECE,2,Monday,Low,Low Probability
+290,Water Bottle,Other,60,Fair,ECE,7,Saturday,Low,Low Probability
+291,Mini Drill Machine,Project Materials,620,Like New,IT,5,Tuesday,High,Within 1 Day
+292,Safety Goggles,Lab Equipment,1240,Good,ME,8,Wednesday,Medium,Within 1 Week
+293,Jumper Wires Bundle,Project Materials,1090,Like New,ECE,3,Sunday,High,Within 1 Day
+294,Sling Bag,Bags,890,Fair,CE,5,Saturday,High,Within 1 Day
+295,Engineering Physics,Books,390,Good,CE,7,Wednesday,High,Within 1 Day
+296,Table Lamp,Other,160,Good,ECE,1,Wednesday,Low,Within 1 Week
+297,Trolley Bag,Bags,600,Fair,ECE,1,Friday,Medium,Within 1 Week
+298,Engineering Chemistry,Books,140,Poor,BIO,5,Saturday,High,Within 1 Day
+299,Mini Drill Machine,Project Materials,2400,Good,ME,5,Monday,Medium,Low Probability
+300,Measuring Flask,Lab Equipment,820,Good,ECE,5,Saturday,High,Within 1 Day
+301,Digital Electronics,Books,170,Poor,ECE,8,Friday,Medium,Within 1 Week
+302,Scientific Calculator,Calculators,920,Like New,CSE,3,Thursday,High,Within 1 Day
+303,Soldering Iron,Lab Equipment,410,Fair,EEE,2,Sunday,Medium,Within 1 Day
+304,Sketch Pens,Stationery,60,Good,ECE,8,Thursday,Low,Within 1 Week
+305,Laptop Bag,Bags,770,Fair,ECE,4,Saturday,Low,Low Probability
+306,Arduino Kit,Electronics,2230,Good,ME,3,Sunday,High,Within 1 Day
+307,HDMI Cable,Electronics,1320,Good,IT,5,Sunday,Medium,Within 1 Week
+308,Programming in Python,Books,310,Fair,CSE,7,Monday,High,Within 1 Day
+309,College Backpack,Bags,1380,Good,IT,4,Wednesday,Low,Low Probability
+310,Extension Board,Other,660,Poor,CE,4,Tuesday,Medium,Low Probability
+311,Keyboard,Electronics,1720,Good,CSE,6,Monday,Medium,Within 1 Week
+312,Graphing Calculator,Calculators,740,Poor,BIO,8,Monday,Medium,Within 1 Week
+313,Scientific Calculator,Calculators,1140,Good,BIO,6,Thursday,Low,Low Probability
+314,Oscilloscope Probe,Lab Equipment,300,Good,CSE,7,Saturday,Medium,Within 1 Day
+315,Sling Bag,Bags,920,Good,EEE,4,Monday,Low,Low Probability
+316,Safety Goggles,Lab Equipment,490,Good,IT,7,Monday,High,Within 1 Day
+317,Extension Board,Other,520,Good,ECE,2,Tuesday,Low,Low Probability
+318,HDMI Cable,Electronics,910,Like New,CE,6,Thursday,High,Within 1 Day
+319,Lab Coat,Lab Equipment,980,Fair,CE,2,Thursday,Low,Low Probability
+320,Data Structures Book,Books,310,Like New,BIO,6,Saturday,High,Within 1 Day
+321,Scientific Calculator,Calculators,270,Like New,CHEM,3,Monday,High,Within 1 Day
+322,Scientific Calculator,Calculators,1160,Good,ME,7,Sunday,High,Within 1 Week
+323,Soldering Kit,Project Materials,1650,Good,ME,5,Wednesday,Low,Low Probability
+324,Lab Manual,Stationery,240,Fair,CHEM,1,Monday,Low,Low Probability
+325,Keyboard,Electronics,380,Poor,IT,8,Friday,Medium,Within 1 Week
+326,Sling Bag,Bags,800,Like New,IT,4,Monday,Medium,Within 1 Week
+327,Sticky Notes,Other,420,Fair,CE,3,Monday,Low,Low Probability
+328,Webcam,Electronics,1890,Good,ME,3,Tuesday,High,Within 1 Day
+329,Control Systems,Books,440,Poor,ME,4,Sunday,High,Within 1 Week
+330,Drafting Compass Set,Stationery,280,Like New,CSE,4,Friday,Medium,Within 1 Week
+331,Trolley Bag,Bags,660,Fair,IT,3,Sunday,Low,Low Probability
+332,Bunsen Burner,Lab Equipment,1590,Poor,ECE,6,Monday,High,Within 1 Week
+333,Basic Calculator,Calculators,510,Good,ME,7,Sunday,High,Within 1 Day
+334,Measuring Flask,Lab Equipment,1570,Fair,IT,4,Saturday,Low,Low Probability
+335,Drafting Compass Set,Stationery,120,Fair,BIO,1,Tuesday,High,Within 1 Day
+336,Casio FX-991ES,Calculators,340,Good,ECE,4,Wednesday,Medium,Within 1 Week
+337,Sling Bag,Bags,270,Good,CE,2,Wednesday,Low,Within 1 Week
+338,DBMS Book,Books,530,Fair,ME,7,Thursday,Medium,Low Probability
+339,Casio FX-991ES,Calculators,1010,Fair,CE,3,Thursday,Low,Low Probability
+340,Computer Networks,Books,350,Poor,ECE,6,Tuesday,Medium,Low Probability
+341,Basic Calculator,Calculators,810,Poor,CHEM,1,Thursday,Medium,Low Probability
+342,Lab Coat,Lab Equipment,360,Good,CE,7,Saturday,High,Within 1 Day
+343,Technical Pens,Stationery,150,Like New,BIO,8,Tuesday,Low,Within 1 Week
+344,Basic Calculator,Calculators,1040,Fair,CHEM,4,Monday,Low,Low Probability
+345,Casio FX-991ES,Calculators,1060,Like New,BIO,8,Thursday,Medium,Within 1 Week
+346,Soldering Iron,Lab Equipment,1960,Good,ME,8,Monday,Medium,Low Probability
+347,Geometry Box,Stationery,60,Like New,ECE,2,Saturday,Medium,Within 1 Day
+348,Engineering Physics,Books,480,Fair,BIO,8,Friday,High,Within 1 Week
+349,Engineering Drawing Kit,Project Materials,2260,Good,ME,2,Sunday,High,Within 1 Week
+350,Wireless Mouse,Electronics,820,Like New,ECE,7,Tuesday,High,Within 1 Day
+351,College Backpack,Bags,430,Good,BIO,6,Sunday,Low,Within 1 Week
+352,Mini Drill Machine,Project Materials,1900,Like New,ECE,2,Friday,High,Within 1 Day
+353,Sensor Module Set,Project Materials,1770,Fair,CHEM,1,Tuesday,Low,Low Probability
+354,DBMS Book,Books,420,Fair,CSE,8,Wednesday,Low,Low Probability
+355,Technical Pens,Stationery,280,Fair,ECE,4,Tuesday,High,Within 1 Week
+356,Record Notebook,Stationery,340,Good,CE,8,Tuesday,Medium,Within 1 Week
+357,College Backpack,Bags,1300,Fair,ECE,5,Saturday,Low,Low Probability
+358,Programming in Python,Books,280,Fair,CE,1,Tuesday,Low,Low Probability
+359,USB Hub,Electronics,1810,Fair,BIO,2,Saturday,Medium,Within 1 Week
+360,College ID Card Holder,Other,540,Good,IT,6,Tuesday,Low,Low Probability
+361,Graph Sheets,Stationery,230,Like New,CE,4,Saturday,Medium,Within 1 Day
+362,Engineering Physics,Books,90,Good,ME,3,Friday,Medium,Within 1 Day
+363,Record Notebook,Stationery,220,Fair,CHEM,5,Tuesday,Medium,Within 1 Week
+364,Scientific Calculator,Calculators,720,Poor,IT,5,Wednesday,High,Within 1 Week
+365,Highlighters Set,Stationery,170,Good,EEE,4,Tuesday,Medium,Within 1 Week
+366,Motor Driver Kit,Project Materials,770,Fair,CHEM,5,Wednesday,Medium,Within 1 Week
+367,HDMI Cable,Electronics,1210,Fair,CHEM,6,Friday,Medium,Within 1 Week
+368,Engineering Drawing Sheets,Stationery,270,Like New,EEE,3,Saturday,Medium,Within 1 Week
+369,Laptop Bag,Bags,880,Good,IT,6,Wednesday,Low,Low Probability
+370,Water Bottle,Other,700,Good,ECE,8,Tuesday,High,Within 1 Week
+371,Record Notebook,Stationery,60,Fair,ME,3,Tuesday,High,Within 1 Day
+372,Soldering Iron,Lab Equipment,1920,Fair,ECE,8,Wednesday,Low,Low Probability
+373,Algorithms Book,Books,360,Good,ME,3,Thursday,High,Within 1 Day
+374,LED Strip,Project Materials,1850,Good,CHEM,7,Monday,Low,Low Probability
+375,Engineering Chemistry,Books,410,Fair,CE,1,Saturday,High,Within 1 Week
+376,HDMI Cable,Electronics,1580,Like New,BIO,5,Tuesday,Low,Within 1 Week
+377,Lab Manual,Stationery,300,Good,IT,7,Saturday,Medium,Within 1 Week
+378,Laptop Bag,Bags,590,Poor,BIO,1,Tuesday,High,Within 1 Day
+379,Compiler Design Book,Books,600,Like New,IT,1,Thursday,Medium,Within 1 Week
+380,Signals and Systems,Books,190,Fair,CSE,1,Saturday,Medium,Within 1 Week
+381,HP 35s Scientific,Calculators,460,Good,ME,4,Saturday,Low,Within 1 Week
+382,Sharp Calculator,Calculators,730,Good,ME,7,Sunday,High,Within 1 Day
+383,Engineering Drawing Sheets,Stationery,80,Good,CE,5,Sunday,Medium,Within 1 Day
+384,Drafting Compass Set,Stationery,50,Good,CE,8,Wednesday,Low,Within 1 Week
+385,HP 35s Scientific,Calculators,880,Good,ECE,2,Saturday,High,Within 1 Week
+386,Extension Board,Other,320,Good,ECE,3,Sunday,Medium,Within 1 Week
+387,Sling Bag,Bags,490,Like New,CSE,1,Sunday,High,Within 1 Day
+388,Drawstring Bag,Bags,1150,Poor,EEE,2,Wednesday,Low,Low Probability
+389,Jumper Wires Bundle,Project Materials,1310,Fair,CHEM,7,Saturday,Low,Low Probability
+390,Engineering Physics,Books,240,Like New,CHEM,8,Tuesday,High,Within 1 Day
+391,Test Tubes Set,Lab Equipment,1150,Like New,BIO,8,Monday,High,Within 1 Day
+392,Control Systems,Books,310,Poor,IT,2,Thursday,Medium,Within 1 Week
+393,Soldering Kit,Project Materials,2490,Fair,CSE,1,Saturday,Medium,Low Probability
+394,College ID Card Holder,Other,130,Fair,IT,4,Wednesday,Low,Low Probability
+395,LED Strip,Project Materials,1160,Like New,CHEM,8,Monday,Medium,Within 1 Week
+396,Planner Diary,Other,720,Like New,BIO,7,Monday,Low,Low Probability
+397,Sketch Pens,Stationery,320,Good,CHEM,6,Wednesday,High,Within 1 Day
+398,Trolley Bag,Bags,1480,Good,IT,8,Monday,High,Within 1 Week
+399,Computer Networks,Books,440,Fair,EEE,6,Saturday,Low,Low Probability
+400,Oscilloscope Probe,Lab Equipment,370,Good,CE,4,Monday,Medium,Within 1 Day
+401,HDMI Cable,Electronics,740,Fair,CSE,2,Sunday,High,Within 1 Day
+402,Test Tubes Set,Lab Equipment,160,Good,CSE,7,Sunday,High,Within 1 Day
+403,Vernier Caliper,Lab Equipment,360,Good,IT,7,Thursday,High,Within 1 Day
+404,Record Notebook,Stationery,200,Poor,CHEM,3,Tuesday,High,Within 1 Day
+405,Sketch Pens,Stationery,190,Fair,CE,4,Tuesday,Medium,Within 1 Week
+406,Vernier Caliper,Lab Equipment,1180,Good,IT,2,Sunday,Medium,Within 1 Week
+407,Record Notebook,Stationery,40,Good,CSE,7,Tuesday,Low,Within 1 Week
+408,Drafting Compass Set,Stationery,180,Fair,ME,1,Saturday,Medium,Low Probability
+409,Sling Bag,Bags,460,Good,CE,7,Tuesday,Medium,Within 1 Day
+410,Engineering Chemistry,Books,470,Good,IT,1,Monday,Medium,Within 1 Week
+411,HDMI Cable,Electronics,2710,Good,CE,4,Wednesday,High,Within 1 Week
+412,Vernier Caliper,Lab Equipment,1660,Good,BIO,1,Thursday,Medium,Low Probability
+413,Graph Sheets,Stationery,200,Good,ME,1,Tuesday,Medium,Within 1 Week
+414,Sticky Notes,Other,610,Good,IT,4,Tuesday,Medium,Low Probability
+415,LED Strip,Project Materials,580,Good,CE,6,Wednesday,Medium,Within 1 Day
+416,Sticky Notes,Other,710,Like New,IT,8,Tuesday,Medium,Within 1 Week
+417,Signals and Systems,Books,410,Good,ECE,7,Wednesday,Medium,Within 1 Week
+418,Trolley Bag,Bags,1290,Good,CSE,5,Saturday,Medium,Low Probability
+419,Measuring Flask,Lab Equipment,1240,Like New,ECE,4,Saturday,Medium,Within 1 Day
+420,Graphing Calculator,Calculators,750,Fair,BIO,2,Saturday,Low,Low Probability
+421,Engineering Mathematics Book,Books,160,Like New,EEE,2,Friday,High,Within 1 Day
+422,Jumper Wires Bundle,Project Materials,1860,Good,CSE,7,Saturday,Low,Low Probability
+423,Control Systems,Books,150,Good,ECE,5,Sunday,High,Within 1 Day
+424,Table Lamp,Other,450,Fair,CSE,8,Tuesday,Low,Low Probability
+425,Drafting Compass Set,Stationery,180,Fair,IT,1,Friday,Low,Low Probability
+426,Compiler Design Book,Books,480,Good,ECE,5,Tuesday,High,Within 1 Week
+427,Portable Charger,Electronics,2940,Fair,ME,3,Tuesday,High,Within 1 Week
+428,Graphing Calculator,Calculators,890,Fair,CSE,8,Saturday,Medium,Low Probability
+429,Engineering Drawing Sheets,Stationery,130,Fair,CHEM,6,Wednesday,High,Within 1 Day
+430,Basic Calculator,Calculators,830,Like New,CE,6,Thursday,High,Within 1 Day
+431,Bunsen Burner,Lab Equipment,1310,Good,IT,7,Tuesday,Low,Low Probability
+432,Sensor Module Set,Project Materials,1670,Like New,IT,8,Thursday,High,Within 1 Day
+433,Graphing Calculator,Calculators,860,Good,EEE,3,Friday,High,Within 1 Week
+434,Scientific Calculator,Calculators,1070,Good,CSE,7,Sunday,High,Within 1 Week
+435,Planner Diary,Other,200,Good,CE,5,Tuesday,Medium,Within 1 Day
+436,Trolley Bag,Bags,270,Fair,ME,3,Thursday,Medium,Within 1 Week
+437,Extension Board,Other,90,Good,CHEM,4,Monday,Low,Within 1 Week
+438,Sling Bag,Bags,1210,Poor,CSE,1,Saturday,Medium,Low Probability
+439,Technical Pens,Stationery,330,Good,ME,7,Saturday,Medium,Low Probability
+440,Record Notebook,Stationery,140,Good,IT,6,Thursday,High,Within 1 Day
+441,Test Tubes Set,Lab Equipment,490,Good,EEE,4,Tuesday,Medium,Within 1 Day
+442,Portable Charger,Electronics,1650,Fair,CHEM,8,Thursday,Medium,Within 1 Week
+443,Digital Electronics,Books,120,Like New,ME,3,Saturday,High,Within 1 Day
+444,Programming in Python,Books,340,Poor,BIO,1,Saturday,High,Within 1 Week
+445,Earphones,Electronics,2780,Poor,CHEM,3,Tuesday,High,Within 1 Week
+446,Drafting Compass Set,Stationery,400,Fair,CHEM,2,Tuesday,Low,Low Probability
+447,Keyboard,Electronics,2360,Fair,ME,2,Tuesday,High,Within 1 Week
+448,Scientific Calculator,Calculators,690,Fair,CSE,7,Friday,High,Within 1 Day
+449,Prototype Board,Project Materials,2170,Fair,BIO,6,Friday,High,Within 1 Week
+450,Soldering Kit,Project Materials,1240,Good,CE,2,Wednesday,Medium,Within 1 Week
+451,Arduino Kit,Electronics,330,Good,ECE,1,Thursday,High,Within 1 Day
+452,Motor Driver Kit,Project Materials,640,Like New,EEE,5,Sunday,Medium,Within 1 Day
+453,Prototype Board,Project Materials,1890,Good,CHEM,3,Wednesday,Medium,Within 1 Week
+454,Sling Bag,Bags,530,Fair,ECE,4,Thursday,High,Within 1 Day
+455,Keyboard,Electronics,1940,Fair,CSE,3,Thursday,Low,Low Probability
+456,Test Tubes Set,Lab Equipment,1380,Good,ECE,5,Tuesday,Medium,Within 1 Week
+457,Sensor Module Set,Project Materials,440,Poor,ME,8,Thursday,High,Within 1 Day
+458,Rulers Set,Stationery,50,Fair,CE,3,Saturday,Low,Low Probability
+459,Safety Goggles,Lab Equipment,720,Fair,IT,7,Thursday,Medium,Low Probability
+460,HP 35s Scientific,Calculators,490,Fair,IT,6,Sunday,High,Within 1 Day
+461,Table Lamp,Other,640,Like New,ME,7,Friday,Low,Low Probability
+462,Highlighters Set,Stationery,90,Fair,EEE,5,Saturday,Medium,Within 1 Day
+463,HDMI Cable,Electronics,2180,Fair,CSE,8,Monday,Medium,Low Probability
+464,HDMI Cable,Electronics,1990,Poor,CSE,5,Tuesday,Medium,Low Probability
+465,HP 35s Scientific,Calculators,1150,Like New,IT,6,Tuesday,Medium,Within 1 Week
+466,Planner Diary,Other,250,Good,CE,5,Tuesday,Medium,Within 1 Day
+467,Safety Goggles,Lab Equipment,400,Poor,CHEM,1,Sunday,High,Within 1 Day
+468,Trolley Bag,Bags,900,Good,EEE,8,Tuesday,High,Within 1 Day
+469,Prototype Board,Project Materials,720,Like New,BIO,8,Friday,Medium,Within 1 Day
+470,Test Tubes Set,Lab Equipment,400,Fair,CHEM,6,Saturday,High,Within 1 Day
+471,Mini Drill Machine,Project Materials,1530,Good,EEE,3,Friday,Medium,Within 1 Week
+472,Laptop Bag,Bags,1270,Good,BIO,6,Wednesday,Low,Low Probability
+473,Bunsen Burner,Lab Equipment,1550,Good,ECE,5,Sunday,Medium,Within 1 Week
+474,Laptop Stand,Electronics,910,Good,CSE,3,Thursday,High,Within 1 Day
+475,Sling Bag,Bags,860,Good,CSE,7,Monday,Low,Low Probability
+476,Planner Diary,Other,150,Good,IT,5,Wednesday,Medium,Within 1 Day
+477,College Backpack,Bags,1090,Like New,CE,3,Sunday,Low,Low Probability
+478,Planner Diary,Other,510,Fair,BIO,5,Thursday,Low,Low Probability
+479,Sling Bag,Bags,1420,Good,ECE,2,Tuesday,Low,Low Probability
+480,Geometry Box,Stationery,360,Good,CHEM,6,Saturday,High,Within 1 Day
+481,Vernier Caliper,Lab Equipment,1900,Like New,CE,5,Saturday,Low,Low Probability
+482,Mini Drill Machine,Project Materials,590,Like New,CHEM,1,Monday,Medium,Within 1 Day
+483,Basic Calculator,Calculators,830,Like New,BIO,5,Tuesday,Medium,Within 1 Week
+484,Measuring Flask,Lab Equipment,1870,Like New,CSE,6,Sunday,High,Within 1 Day
+485,Sketch Pens,Stationery,260,Like New,ME,8,Saturday,High,Within 1 Day
+486,Highlighters Set,Stationery,280,Good,ECE,8,Wednesday,Medium,Within 1 Week
+487,Data Structures Book,Books,220,Good,CHEM,1,Saturday,High,Within 1 Day
+488,Graph Sheets,Stationery,250,Fair,CE,1,Friday,Medium,Within 1 Week
+489,Prototype Board,Project Materials,870,Fair,BIO,7,Tuesday,Medium,Within 1 Week
+490,Technical Pens,Stationery,360,Fair,EEE,7,Tuesday,Low,Low Probability
+491,Sharp Calculator,Calculators,670,Good,EEE,8,Tuesday,Medium,Within 1 Week
+492,Safety Goggles,Lab Equipment,730,Good,CHEM,1,Tuesday,Low,Within 1 Week
+493,HDMI Cable,Electronics,2020,Good,CHEM,6,Thursday,Low,Low Probability
+494,Lab Coat,Lab Equipment,700,Fair,ECE,8,Tuesday,High,Within 1 Day
+495,Engineering Mathematics Book,Books,330,Good,CHEM,4,Saturday,Medium,Within 1 Week
+496,Earphones,Electronics,1890,Fair,EEE,6,Tuesday,Low,Low Probability
+497,Basic Calculator,Calculators,690,Good,CE,6,Monday,Medium,Within 1 Week
+498,Portable Charger,Electronics,1630,Like New,EEE,2,Thursday,Low,Low Probability
+499,Planner Diary,Other,660,Like New,ECE,4,Tuesday,Medium,Within 1 Week
+500,Data Structures Book,Books,440,Good,ECE,3,Thursday,High,Within 1 Week
+501,Planner Diary,Other,250,Like New,BIO,6,Saturday,Low,Within 1 Day
+502,Sticky Notes,Other,350,Good,CHEM,4,Friday,Low,Within 1 Week
+503,Geometry Box,Stationery,310,Like New,ME,8,Wednesday,Medium,Within 1 Week
+504,Machine Learning Book,Books,600,Good,ME,1,Friday,High,Within 1 Week
+505,College Backpack,Bags,1350,Fair,CE,8,Sunday,Medium,Low Probability
+506,Motor Driver Kit,Project Materials,650,Like New,ECE,1,Sunday,Low,Within 1 Week
+507,Raspberry Pi,Electronics,2290,Like New,CSE,7,Saturday,High,Within 1 Day
+508,Computer Networks,Books,310,Good,ECE,1,Tuesday,High,Within 1 Day
+509,Planner Diary,Other,110,Good,BIO,6,Sunday,Medium,Within 1 Day
+510,Control Systems,Books,150,Fair,ECE,4,Friday,High,Within 1 Day
+511,Prototype Board,Project Materials,990,Good,CE,3,Friday,Medium,Within 1 Week
+512,Sling Bag,Bags,1120,Fair,ME,3,Friday,Low,Low Probability
+513,Extension Board,Other,370,Good,IT,6,Thursday,Low,Low Probability
+514,Webcam,Electronics,2530,Good,EEE,6,Thursday,Medium,Low Probability
+515,Geometry Box,Stationery,40,Good,EEE,1,Wednesday,Medium,Within 1 Day
+516,Machine Learning Book,Books,360,Poor,ME,2,Monday,Medium,Within 1 Week
+517,Trolley Bag,Bags,760,Good,EEE,2,Friday,High,Within 1 Day
+518,Sling Bag,Bags,600,Good,ECE,5,Monday,Medium,Within 1 Week
+519,Engineering Chemistry,Books,420,Good,BIO,7,Sunday,Low,Low Probability
+520,Engineering Drawing Kit,Project Materials,1450,Good,IT,3,Wednesday,Medium,Within 1 Week
+521,Jumper Wires Bundle,Project Materials,2270,Like New,BIO,5,Sunday,Low,Low Probability
+522,Sticky Notes,Other,100,Good,EEE,2,Thursday,Medium,Within 1 Day
+523,Test Tubes Set,Lab Equipment,1300,Like New,BIO,4,Friday,High,Within 1 Day
+524,Raspberry Pi,Electronics,1390,Fair,IT,2,Monday,High,Within 1 Day
+525,HDMI Cable,Electronics,1710,Good,CSE,5,Tuesday,High,Within 1 Day
+526,Test Tubes Set,Lab Equipment,240,Poor,CE,4,Saturday,High,Within 1 Day
+527,Sharp Calculator,Calculators,260,Good,ME,5,Monday,High,Within 1 Day
+528,Table Lamp,Other,70,Good,CE,4,Friday,Low,Within 1 Week
+529,Lab Coat,Lab Equipment,920,Good,CSE,5,Tuesday,Low,Low Probability
+530,Algorithms Book,Books,90,Like New,EEE,6,Sunday,Medium,Within 1 Day
+531,Portable Charger,Electronics,2380,Poor,ECE,6,Thursday,High,Within 1 Week
+532,Keyboard,Electronics,2180,Good,CSE,1,Tuesday,Medium,Within 1 Week
+533,Soldering Kit,Project Materials,280,Good,IT,6,Saturday,High,Within 1 Day
+534,Graph Sheets,Stationery,350,Good,BIO,1,Friday,Medium,Within 1 Week
+535,Soldering Kit,Project Materials,560,Fair,CE,7,Tuesday,Medium,Within 1 Week
+536,Sling Bag,Bags,1360,Like New,ME,4,Sunday,High,Within 1 Day
+537,Oscilloscope Probe,Lab Equipment,1730,Like New,ME,6,Monday,High,Within 1 Day
+538,Soldering Iron,Lab Equipment,1870,Fair,CSE,6,Thursday,Medium,Low Probability
+539,Multimeter,Lab Equipment,370,Like New,CSE,5,Friday,Medium,Within 1 Day
+540,Arduino Kit,Electronics,1770,Like New,CHEM,3,Friday,High,Within 1 Day
+541,Oscilloscope Probe,Lab Equipment,1160,Good,ME,4,Tuesday,Low,Low Probability
+542,Prototype Board,Project Materials,1030,Fair,ECE,3,Thursday,Medium,Within 1 Week
+543,College ID Card Holder,Other,490,Good,CSE,7,Saturday,Medium,Within 1 Week
+544,Discrete Mathematics,Books,190,Good,CSE,4,Friday,High,Within 1 Day
+545,Engineering Drawing Kit,Project Materials,980,Good,BIO,5,Sunday,Medium,Within 1 Week
+546,Geometry Box,Stationery,60,Fair,ME,8,Sunday,Low,Within 1 Week
+547,Graphing Calculator,Calculators,1000,Good,ME,7,Thursday,Low,Low Probability
+548,Earphones,Electronics,670,Good,ME,2,Monday,Medium,Within 1 Day
+549,HP 35s Scientific,Calculators,920,Good,ME,7,Friday,High,Within 1 Week
+550,Vernier Caliper,Lab Equipment,1930,Like New,CSE,7,Wednesday,High,Within 1 Day
+551,Drafting Compass Set,Stationery,90,Fair,CE,1,Friday,Low,Within 1 Week
+552,Sticky Notes,Other,60,Good,CHEM,4,Tuesday,Low,Within 1 Week
+553,Water Bottle,Other,660,Good,CE,5,Friday,Medium,Low Probability
+554,Programming in Python,Books,230,Like New,IT,1,Tuesday,High,Within 1 Day
+555,College Backpack,Bags,350,Like New,ME,3,Saturday,Medium,Within 1 Day
+556,Planner Diary,Other,640,Good,CSE,2,Sunday,Low,Low Probability
+557,Casio FX-991ES,Calculators,1060,Good,EEE,8,Tuesday,Medium,Within 1 Week
+558,Prototype Board,Project Materials,1060,Good,ECE,2,Thursday,Medium,Within 1 Week
+559,Motor Driver Kit,Project Materials,1260,Good,IT,3,Friday,Medium,Within 1 Week
+560,College ID Card Holder,Other,670,Good,EEE,4,Monday,Medium,Low Probability
+561,Webcam,Electronics,2000,Good,IT,6,Friday,Medium,Low Probability
+562,Technical Pens,Stationery,60,Good,IT,1,Monday,Medium,Within 1 Week
+563,Multimeter,Lab Equipment,830,Fair,CHEM,8,Sunday,Low,Low Probability
+564,Test Tubes Set,Lab Equipment,1980,Fair,IT,8,Sunday,High,Within 1 Week
+565,Geometry Box,Stationery,380,Good,CSE,4,Friday,High,Within 1 Week
+566,Graphing Calculator,Calculators,490,Fair,IT,7,Saturday,Medium,Within 1 Week
+567,Bunsen Burner,Lab Equipment,390,Fair,EEE,6,Saturday,Medium,Within 1 Week
+568,College ID Card Holder,Other,430,Good,EEE,4,Friday,Low,Low Probability
+569,Raspberry Pi,Electronics,2120,Good,CHEM,3,Tuesday,High,Within 1 Day
+570,Highlighters Set,Stationery,100,Fair,ECE,3,Tuesday,Medium,Within 1 Day
+571,Scientific Calculator,Calculators,520,Poor,ECE,6,Thursday,Medium,Within 1 Week
+572,Compiler Design Book,Books,400,Good,CE,6,Tuesday,Medium,Within 1 Week
+573,Planner Diary,Other,170,Good,ME,5,Monday,High,Within 1 Day
+574,Graphing Calculator,Calculators,760,Good,IT,5,Tuesday,High,Within 1 Day
+575,Safety Goggles,Lab Equipment,790,Good,IT,8,Monday,Medium,Within 1 Week
+576,Casio FX-991ES,Calculators,260,Like New,BIO,3,Saturday,High,Within 1 Day
+577,Drawstring Bag,Bags,930,Fair,ECE,8,Friday,High,Within 1 Day
+578,Casio FX-991ES,Calculators,520,Fair,CHEM,8,Tuesday,Medium,Within 1 Week
+579,Sling Bag,Bags,620,Fair,IT,6,Thursday,Low,Low Probability
+580,Sling Bag,Bags,1190,Fair,EEE,6,Friday,Medium,Low Probability
+581,Basic Calculator,Calculators,770,Good,EEE,8,Thursday,Medium,Within 1 Week
+582,Test Tubes Set,Lab Equipment,940,Like New,CE,7,Sunday,Medium,Within 1 Day
+583,Laptop Stand,Electronics,620,Fair,CHEM,2,Friday,Medium,Within 1 Week
+584,College ID Card Holder,Other,360,Poor,ECE,2,Saturday,Medium,Within 1 Week
+585,Sling Bag,Bags,380,Like New,ME,1,Sunday,Low,Within 1 Day
+586,Record Notebook,Stationery,340,Good,CE,4,Saturday,Medium,Within 1 Week
+587,Motor Driver Kit,Project Materials,560,Good,BIO,3,Sunday,Medium,Within 1 Week
+588,Control Systems,Books,450,Like New,EEE,1,Tuesday,High,Within 1 Day
+589,LED Strip,Project Materials,1760,Good,CE,3,Thursday,High,Within 1 Week
+590,Sling Bag,Bags,560,Good,ME,3,Monday,Low,Within 1 Week
+591,Planner Diary,Other,500,Poor,ME,2,Tuesday,Low,Low Probability
+592,Soldering Kit,Project Materials,2060,Good,CHEM,7,Wednesday,Medium,Low Probability
+593,Planner Diary,Other,290,Fair,EEE,7,Friday,Low,Low Probability
+594,Planner Diary,Other,430,Like New,CHEM,2,Tuesday,Medium,Within 1 Day
+595,Sticky Notes,Other,130,Good,ECE,4,Thursday,Medium,Within 1 Week
+596,Geometry Box,Stationery,60,Poor,CSE,8,Thursday,Medium,Within 1 Week
+597,Motor Driver Kit,Project Materials,1410,Good,CSE,5,Saturday,Medium,Within 1 Week
+598,Bunsen Burner,Lab Equipment,260,Fair,EEE,1,Wednesday,Low,Low Probability
+599,Technical Pens,Stationery,100,Good,EEE,5,Monday,Medium,Within 1 Day
+600,Extension Board,Other,230,Good,CE,8,Tuesday,High,Within 1 Day
